@@ -1,4 +1,5 @@
-#Requirements
+# Requirements
+- Upload arduino sketch example code [Firmata]-[StandardFirmata]
 ```
 ~ $ sudo apt-get install python-serial
 ~ $ sudo apt-get install git
