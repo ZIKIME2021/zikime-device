@@ -7,15 +7,15 @@ class Arduino:
     파라미터에 시리얼통신할 포트 번호 전달. arduino = Arduino('/dev/ttyACM0')
     """
     def __init__(self, PORT='COM3'):
-        self.ard = pf.Arduino(PORT)
+        self.board = pf.Arduino(PORT)
         print('connected.')
 
-        pf.util.Iterator(self.ard).start()
+        pf.util.Iterator(self.board).start()
 
-        self.vive = self.ard.get_pin('a:8:o') # 아날로그핀 0번을 출력으로 설정  
-        self.buzzer = self.ard.get_pin('d:9:o') # 디지털핀 9번을 출력으로 설정
+        self.vive = self.board.get_pin('d:9:p') # 아날로그핀 8번을 출력으로 설정  
+        #self.buzzer = self.board.get_pin('d:9:o') # 디지털핀 9번을 출력으로 설정
 
-        self.ard.analog[0].enable_reporting()
+        self.board.analog[0].enable_reporting()
         #self.led = self.ard.get_pin('d:10:o') # 디지털핀 10번을 출력으로 설정
 
     def led_blink(self, loop=1):
@@ -25,15 +25,15 @@ class Arduino:
             self.led.write(0)
             sleep(0.5)
     
-    def vive(self, loop=1):
+    def vive_control(self, loop=1, intensity=1):
         for _ in range(loop):
-            self.vive.write(200)
-            sleep(2)
+            self.vive.write(intensity)
+            sleep(1)
             self.vive.write(0)
-            sleep(2)
+            sleep(1)
 
 
 if __name__ == "__main__":
     print('Arduino Sensor Test.')
-    ard = Arduino('COM5')
-    ard.vive()
+    ard = Arduino('COM3')
+    ard.vive_control(10)
