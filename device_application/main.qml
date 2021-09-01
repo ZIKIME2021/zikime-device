@@ -1,8 +1,8 @@
-import QtQuick 2.12
-import QtQuick.Controls 2.12
-import QtQuick.Controls.Material 2.12
-import QtQuick.Window 2.12
-import QtQuick.Layouts 1.15
+import QtQuick 2.11
+import QtQuick.Controls 2.4
+import QtQuick.Controls.Material 2.4
+import QtQuick.Window 2.4
+import QtQuick.Layouts 1.0
 
 import CmdLauncher 1.0
 
@@ -12,7 +12,7 @@ ApplicationWindow {
     height: 480
     visible: true
     title: qsTr("지키ME")
-
+	visibility: "FullScreen"
     Material.theme: Material.Light
     Material.accent: Material.Blue
 
@@ -128,8 +128,8 @@ ApplicationWindow {
                     Label {
                         Layout.alignment: Qt.AlignCenter
                         Layout.topMargin: 70
-                        text: "보호자로부터 스트리밍 요청이 도착했습니다."
-                        font.pixelSize: 24
+                        text: "A streaming request has arrived from your guardian"
+                        font.pixelSize: 20
                         font.bold: true
                     }
                     RowLayout {
@@ -137,19 +137,19 @@ ApplicationWindow {
                         spacing: 150
                         Button {
                             Layout.alignment: Qt.AlignBottom | Qt.AlignHCenter
-                            text: "   수락   "
+                            text: "   Accept   "
                             font.pixelSize: 14
                             onClicked: {
                                 idPopup.close()
                                 idReqTimer.stop()
-                                idCmdLauncher.setProgram("notepad.exe")
-                                idCmdLauncher.setArgs("test.cpp")
+                                idCmdLauncher.setProgram("mousepad")
+                                idCmdLauncher.setArgs("test.txt")
                                 idCmdLauncher.start()
                             }
                         }
                         Button {
                             Layout.alignment: Qt.AlignBottom | Qt.AlignHCenter
-                            text: "   거절   "
+                            text: "   Decline   "
                             font.pixelSize: 14
                             onClicked: {
                                 idPopup.close()

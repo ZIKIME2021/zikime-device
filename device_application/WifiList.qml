@@ -1,8 +1,7 @@
 import QtQuick 2.0
 import QtQuick.Controls 2.0
-import QtQuick.Layouts 1.12
-import QtQuick.Controls.Material 2.12
-import QtQml.Models 2.15
+import QtQuick.Layouts 1.0
+import QtQuick.Controls.Material 2.4
 
 Item {
     id: idWifiList
@@ -97,8 +96,8 @@ Item {
                         Text {
                             Layout.alignment: Qt.AlignHCenter
                             Layout.topMargin: 5
-                            text: "연결됨"
-                            font.family: "맑은 고딕"
+                            text: "Connected"
+                            font.family: "Arial"
                             font.pixelSize: 12
                             font.bold: true
                         }
@@ -149,7 +148,7 @@ Item {
                             Text {
                                 anchors.left: parent.left
                                 anchors.leftMargin: 20
-                                text: "네트워크 속도"
+                                text: "Network speed"
                                 font.family: "맑은 고딕"
                                 font.pixelSize: 12
                             }
@@ -168,7 +167,7 @@ Item {
                             Text {
                                 anchors.left: parent.left
                                 anchors.leftMargin: 20
-                                text: "보안"
+                                text: "Secure"
                                 font.family: "맑은 고딕"
                                 font.pixelSize: 12
                             }
@@ -187,7 +186,7 @@ Item {
                             Text {
                                 anchors.left: parent.left
                                 anchors.leftMargin: 20
-                                text: "IP 주소"
+                                text: "IP Addr"
                                 font.family: "맑은 고딕"
                                 font.pixelSize: 12
                             }
@@ -223,7 +222,7 @@ Item {
                                 Text {
                                     Layout.alignment: Qt.AlignLeft
                                     Layout.leftMargin: 20
-                                    text: "자동으로 다시 연결"
+                                    text: "Automatic reconnect"
                                     font.family: "맑은 고딕"
                                     font.pixelSize: 12
                                 }
@@ -240,7 +239,7 @@ Item {
                             Text {
                                 anchors.left: parent.left
                                 anchors.leftMargin: 20
-                                text: "보안"
+                                text: "Secure"
                                 font.family: "맑은 고딕"
                                 font.pixelSize: 12
                             }
