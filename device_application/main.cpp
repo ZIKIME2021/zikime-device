@@ -1,6 +1,6 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
-
+#include "cmdlauncher.h"
 
 int main(int argc, char *argv[])
 {
@@ -17,6 +17,8 @@ int main(int argc, char *argv[])
         if (!obj && url == objUrl)
             QCoreApplication::exit(-1);
     }, Qt::QueuedConnection);
+
+    qmlRegisterType<CmdLauncher>("CmdLauncher", 1, 0, "CmdLauncher");
     engine.load(url);
 
     return app.exec();

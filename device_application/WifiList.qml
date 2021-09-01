@@ -28,7 +28,7 @@ Item {
     Component {
         id: contactDelegate
         Item {
-            width: 300
+            width: 200
             height: 100
             RowLayout {
                 anchors.fill: parent
@@ -39,13 +39,13 @@ Item {
                     height: 24
                     Image {
                         anchors.fill: parent
-                        source: "../res/wifi.png"
+                        source: "/res/wifi.png"
                     }
                 }
                 Text {
                     text: name
                     font.family: "Arial"
-                    font.pixelSize: 18
+                    font.pixelSize: 16
                 }
             }
         }
@@ -55,7 +55,7 @@ Item {
         anchors.fill: parent
         ListView {
             id: idListView
-            Layout.preferredWidth: 300
+            Layout.preferredWidth: 250
             Layout.fillHeight: true
             model: model
             delegate: contactDelegate
@@ -84,7 +84,7 @@ Item {
                             Layout.topMargin: 10
                             text: "SK_WIFIGIGA5555_5G"
                             font.family: "Arial"
-                            font.pixelSize: 24
+                            font.pixelSize: 20
                             font.bold: true
                         }
                         Image {
@@ -92,7 +92,7 @@ Item {
                             Layout.topMargin: 10
                             Layout.preferredHeight: 24
                             Layout.preferredWidth: 24
-                            source: "../res/wifi.png"
+                            source: "/res/wifi.png"
                         }
                         Text {
                             Layout.alignment: Qt.AlignHCenter
@@ -121,7 +121,7 @@ Item {
                         anchors.left: parent.lef
                         Image {
                             anchors.fill: parent
-                            source: "../res/arrow_back.png"
+                            source: "/res/arrow_back.png"
                             fillMode: Image.PreserveAspectFit
                         }
                         MouseArea {
@@ -134,8 +134,8 @@ Item {
                     id: idWifiInfo
                     anchors.left: parent.left
                     anchors.right: parent.right
-                    anchors.leftMargin: 120
-                    anchors.rightMargin: 120
+                    anchors.leftMargin: 30
+                    anchors.rightMargin: 30
                     anchors.top: idBackButton.bottom
                     color: "White"
                     radius: 20
@@ -206,8 +206,8 @@ Item {
                     id: idWifiAdvanced
                     anchors.left: parent.left
                     anchors.right: parent.right
-                    anchors.leftMargin: 120
-                    anchors.rightMargin: 120
+                    anchors.leftMargin: 30
+                    anchors.rightMargin: 30
                     anchors.top: idWifiInfo.bottom
                     anchors.topMargin: 20
                     color: "White"

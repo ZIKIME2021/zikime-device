@@ -34,13 +34,13 @@ Item {
     Component {
         id: contactDelegate
         Item {
-            width: 300
+            width: 250
             height: 100
             ColumnLayout {
                 Text {
                     text: 'Date: ' + date
                     font.family: "Arial"
-                    font.pixelSize: 24
+                    font.pixelSize: 20
                 }
                 RowLayout {
                     Button {
@@ -59,7 +59,7 @@ Item {
         anchors.fill: parent
         ListView {
             id: idListView
-            Layout.preferredWidth: 300
+            Layout.preferredWidth: 250
             Layout.fillHeight: true
             model: model
             delegate: contactDelegate
