@@ -47,6 +47,7 @@ ApplicationWindow {
 
                     MouseArea {
                         anchors.fill: parent
+                        onClicked: pushView("WifiList.qml")
                     }
                 }
                 Item {
