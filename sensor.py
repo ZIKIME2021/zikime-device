@@ -12,10 +12,11 @@ class Arduino:
 
         pf.util.Iterator(self.ard).start()
 
-        self.vive = board.get_pin('a:0:o') # 아날로그핀 0번을 출력으로 설정
+        self.vive = self.ard.get_pin('a:8:o') # 아날로그핀 0번을 출력으로 설정  
+        self.buzzer = self.ard.get_pin('d:9:o') # 디지털핀 9번을 출력으로 설정
 
         self.ard.analog[0].enable_reporting()
-        self.led = self.ard.get_pin('d:10:o') # 디지털핀 10번을 출력으로 설정
+        #self.led = self.ard.get_pin('d:10:o') # 디지털핀 10번을 출력으로 설정
 
     def led_blink(self, loop=1):
         for _ in range(loop):
@@ -31,3 +32,8 @@ class Arduino:
             self.vive.write(0)
             sleep(2)
 
+
+if __name__ == "__main__":
+    print('Arduino Sensor Test.')
+    ard = Arduino('COM5')
+    ard.vive()
