@@ -7,3 +7,7 @@
 ~ $ cd pyFirmata
 ~ $ sudo python setup.py install
 ```
+or
+```
+~ $ pip3 install pyfirmata
+```
