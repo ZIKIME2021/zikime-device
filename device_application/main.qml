@@ -70,6 +70,7 @@ ApplicationWindow {
                     }
                     MouseArea {
                         anchors.fill: parent
+                        onClicked: pushView("VideoList.qml")
                     }
                 }
                 Item {
@@ -122,11 +123,13 @@ ApplicationWindow {
     {
         if(arguments.length > 0)
         {
-            for(var nCnt = 0 ; nCnt < arguments.length ; nCnt++)
+            for(var nCnt = 0; nCnt < arguments.length; nCnt++)
             {
                 idStackView.pop(arguments[nCnt])
             }
-        }else {
+        }
+        else
+        {
             if(idStackView.depth > 1)
             {
                 idStackView.pop()
