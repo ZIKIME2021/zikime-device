@@ -1,0 +1,14 @@
+<RCC>
+    <qresource prefix="/">
+        <file>res/arrow_back.png</file>
+        <file>res/bluetooth.png</file>
+        <file>res/cellular.png</file>
+        <file>res/pause.png</file>
+        <file>res/play.png</file>
+        <file>res/play2.png</file>
+        <file>res/road.jpg</file>
+        <file>res/sos.png</file>
+        <file>res/video.png</file>
+        <file>res/wifi.png</file>
+    </qresource>
+</RCC>
