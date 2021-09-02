@@ -12,8 +12,8 @@ class Arduino:
 
         pf.util.Iterator(self.board).start()
 
-        self.vive = self.board.get_pin('d:9:p') # 아날로그핀 8번을 출력으로 설정  
-        #self.buzzer = self.board.get_pin('d:9:o') # 디지털핀 9번을 출력으로 설정
+        self.vive = self.board.get_pin('d:9:p') # 디지털핀 9번을 PWM으로 설정  
+        #self.buzzer = self.board.get_pin('d:10:o') # 디지털핀 9번을 출력으로 설정
 
         self.board.analog[0].enable_reporting()
         #self.led = self.ard.get_pin('d:10:o') # 디지털핀 10번을 출력으로 설정
