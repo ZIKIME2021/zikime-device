@@ -12,7 +12,7 @@ ApplicationWindow {
     height: 480
     visible: true
     title: qsTr("지키ME")
-    visibility: "FullScreen"
+	visibility: "FullScreen"
     Material.theme: Material.Light
     Material.accent: Material.Blue
 
