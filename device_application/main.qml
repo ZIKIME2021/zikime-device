@@ -2,7 +2,7 @@ import QtQuick 2.12
 import QtQuick.Controls 2.12
 import QtQuick.Controls.Material 2.12
 import QtQuick.Window 2.12
-import QtQuick.Layouts 1.15
+import QtQuick.Layouts 1.0
 
 import CmdLauncher 1.0
 
@@ -12,7 +12,7 @@ ApplicationWindow {
     height: 480
     visible: true
     title: qsTr("지키ME")
-
+    visibility: "FullScreen"
     Material.theme: Material.Light
     Material.accent: Material.Blue
 
@@ -45,10 +45,18 @@ ApplicationWindow {
                     }
                     Timer {
                         id: idTimer
-                        interval: 3000
+                        interval: 1000
                         running: false
-                        repeat: false
-                        onTriggered: idPopup.close()
+                        repeat: true
+                        onTriggered: {
+                            if(!idAutoDecline.remaining)
+                            {
+                                idPopup.close()
+                                //idAutoDecline.remainTime = 10
+                            }
+                            else
+                                idAutoDecline.remainTime -= 1
+                        }
                     }
 
                     MouseArea {
@@ -121,6 +129,7 @@ ApplicationWindow {
             modal: true
             focus: true
             onClosed: idTimer.stop()
+
             Item {
                 anchors.fill: parent
                 ColumnLayout {
@@ -132,6 +141,16 @@ ApplicationWindow {
                         font.pixelSize: 24
                         font.bold: true
                     }
+                    Text {
+                        id: idAutoDecline
+                        Layout.alignment: Qt.AlignHCenter
+                        text: remainTime.toFixed(0) + "초 후에 자동으로 수락됩니다."
+                        font.pixelSize: 20
+
+                        property int remainTime: 10
+                        property bool remaining: remainTime > 0 ? true : false
+                    }
+
                     RowLayout {
                         Layout.alignment: Qt.AlignHCenter
                         spacing: 150
@@ -139,12 +158,20 @@ ApplicationWindow {
                             Layout.alignment: Qt.AlignBottom | Qt.AlignHCenter
                             text: "   수락   "
                             font.pixelSize: 14
+
                             onClicked: {
                                 idPopup.close()
                                 idReqTimer.stop()
                                 idCmdLauncher.setProgram("notepad.exe")
                                 idCmdLauncher.setArgs("test.cpp")
                                 idCmdLauncher.start()
+                            }
+                            background: Rectangle {
+                                implicitWidth: 100
+                                implicitHeight: 40
+                                opacity: enabled ? 1 : 0.3
+                                radius: 2
+                                color: idAutoDecline.remaining ? "#EEEEEE" : "#81D4FA"
                             }
                         }
                         Button {
@@ -155,6 +182,13 @@ ApplicationWindow {
                                 idPopup.close()
                                 idReqTimer.stop()
                             }
+                            background: Rectangle {
+                                implicitWidth: 100
+                                implicitHeight: 40
+                                opacity: enabled ? 1 : 0.3
+                                radius: 2
+                                color: idAutoDecline.remaining ? "#81D4FA" : "#EEEEEE"
+                            }
                         }
                     }
                 }
@@ -164,13 +198,15 @@ ApplicationWindow {
 
     Timer {
         id: idReqTimer
-        interval: 3000
+        interval: 6000
         running: true
         repeat: true
         onTriggered: refresh()
     }
 
-    Component.onCompleted: idReqTimer.start()
+    Component.onCompleted: {
+        idReqTimer.start()
+    }
 
     function refresh()
     {
@@ -186,6 +222,7 @@ ApplicationWindow {
                     console.log("TRUE")
                     idPopup.open()
                     idTimer.start()
+                    idReqTimer.stop();
                 }
                 else
                     console.log("FALSE")

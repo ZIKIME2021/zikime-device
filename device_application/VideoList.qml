@@ -2,8 +2,6 @@ import QtQuick 2.0
 import QtQuick.Controls 2.12
 import QtQuick.Layouts 1.12
 import QtQuick.Controls.Material 2.12
-import QtQml.Models 2.15
-
 Item {
     id: idVideoList
 
@@ -44,11 +42,11 @@ Item {
                 }
                 RowLayout {
                     Button {
-                        text: '재생'
+                        text: 'Play'
                         font.family: "맑은 고딕"
                     }
                     Button {
-                        text: '삭제'
+                        text: 'Delete'
                     }
                 }
             }
