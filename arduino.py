@@ -16,7 +16,7 @@ class Arduino:
         self.buzzer = self.board.get_pin('d:10:o') # 디지털핀 10번을 출력으로 설정 (buzzer)
 
         self.board.analog[0].enable_reporting()
-        self.led = self.ard.get_pin('d:8:o') # 디지털핀 10번을 출력으로 설정(LED)
+        self.led = self.board.get_pin('d:8:o') # 디지털핀 10번을 출력으로 설정(LED)
 
     def led_blink(self, loop=1):
         print('LED_BLINK')
@@ -56,5 +56,6 @@ class Arduino:
 
 if __name__ == "__main__":
     print('Arduino Sensor Test.')
-    ard = Arduino('COM3')  # 인자값으로 arduino의 port number 전달
+    ard = Arduino('COM5')  # 인자값으로 arduino의 port number 전달
     ard.vive_control(10)
+    ard.led_blink(loop=10)
