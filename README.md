@@ -4,6 +4,15 @@
 ZIMIKE 서비스를 사용하는 피보호자가 지니고 다닐 디바이스에 적용될 애플리케이션
 
 ![zikime_device](https://user-images.githubusercontent.com/14028864/132512455-bebfe749-5a74-4351-bc92-f353815c4162.gif)
+
+#### 1.1. zikime-device
+
+[지키미 디바이스 시작하기](https://github.com/ZIKIME2021/zikime-device) 를 참고하십시오.
+
+#### 1.2. zikime-server
+
+[지키미 서버 시작하기](https://github.com/ZIKIME2021/zikime-server) 를 참고하십시오.
+
 ### 2. Requirements
 ```
 $ sudo apt-get update
