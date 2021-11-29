@@ -7,7 +7,7 @@ from PySide6.QtWidgets import *
 from PySide6.QtCore import *
 
 
-class ScoreDB(QWidget):
+class Zikime(QWidget):
     def __init__(self):
         super().__init__()
         self.initUI()
@@ -127,5 +127,5 @@ class ScoreDB(QWidget):
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
-    ex = ScoreDB()
+    ex = Zikime()
     sys.exit(app.exec())
