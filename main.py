@@ -1,7 +1,6 @@
 import pickle
 import sys
 import requests
-import random
 
 from PySide6.QtWidgets import *
 from PySide6.QtCore import *
@@ -106,7 +105,7 @@ class Zikime(QWidget):
         self.resultTextEdit.append(f"{device_num}번은 등록 가능한 기기 입니다.")
         
         while True:
-            regist_number = random.randint(1000, 9999)
+            regist_number = json_msg['regist_number']
             
             if regist_number not in self.numberDB:
                 break
