@@ -11,8 +11,6 @@ ApplicationWindow {
     visible: true
     title: qsTr("ZIKIME")
 
-    //property Test test: Test{}
-
     Material.theme: Material.Light
     Material.accent: Material.Blue
 
@@ -76,7 +74,7 @@ ApplicationWindow {
                     }
                 }
                 Item {
-                    id: idCellular
+                    id: idSettings
                     Layout.preferredHeight: 200
                     Layout.fillWidth: true
                     Image {
@@ -86,13 +84,9 @@ ApplicationWindow {
                     }
                     MouseArea {
                         anchors.fill: parent
-                        onClicked: pushView("WifiList.qml")
+                        onClicked: pushView("Settings.qml")
                     }
                 }
-            }
-            Button {
-                text: "test1"
-                onClicked: idPopup.open()
             }
         }
     }

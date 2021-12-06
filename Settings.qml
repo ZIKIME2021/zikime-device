@@ -4,63 +4,16 @@ import QtQuick.Layouts 1.12
 import QtQuick.Controls.Material 2.12
 import QtQml.Models 2.15
 
-Item {
-    id: idWifiList
+import com.zikime.settings 1.0
+import com.zikime.const 1.0
 
-    ListModel {
-        id:model
-        ListElement {
-            name: "SK_WIFIGIGA5555_5G"
-        }
-        ListElement {
-            name: "SK_WIFIGIGA1111_2.4G"
-        }
-        ListElement {
-            name: "SK_WIFIGIGA2222_2.4G"
-        }
-        ListElement {
-            name: "SK_WIFIGIGA3333_5G"
-        }
-        ListElement {
-            name: "SK_WIFIGIGA4444_5G"
-        }
-    }
-    Component {
-        id: contactDelegate
-        Item {
-            width: 300
-            height: 100
-            RowLayout {
-                anchors.fill: parent
-                anchors.leftMargin: 20
-                Item {
-                    id: idWifiImg
-                    width: 24
-                    height: 24
-                    Image {
-                        anchors.fill: parent
-                        source: "./res/wifi.png"
-                    }
-                }
-                Text {
-                    text: name
-                    font.family: "Arial"
-                    font.pixelSize: 18
-                }
-            }
-        }
-    }
+Item {
+    id: idSettings
+    property Settings settings: Settings{}
+    property Const notify: Const{}
 
     RowLayout {
         anchors.fill: parent
-        ListView {
-            id: idListView
-            Layout.preferredWidth: 300
-            Layout.fillHeight: true
-            model: model
-            delegate: contactDelegate
-            focus: true
-        }
         Rectangle {
             Layout.preferredWidth: 3
             Layout.fillHeight: true
@@ -82,7 +35,7 @@ Item {
                         Text {
                             Layout.alignment: Qt.AlignHCenter
                             Layout.topMargin: 10
-                            text: "SK_WIFIGIGA5555_5G"
+                            text: "Settings"
                             font.family: "Arial"
                             font.pixelSize: 24
                             font.bold: true
@@ -92,15 +45,15 @@ Item {
                             Layout.topMargin: 10
                             Layout.preferredHeight: 24
                             Layout.preferredWidth: 24
-                            source: "./res/wifi.png"
+                            source: "./res/settings.png"
                         }
                         Text {
+                            id: idSoundMode
                             Layout.alignment: Qt.AlignHCenter
-                            Layout.topMargin: 5
-                            text: "연결됨"
-                            font.family: "맑은 고딕"
-                            font.pixelSize: 12
-                            font.bold: true
+                            Layout.topMargin: 50
+                            text: "None"
+                            font.family: "Arial"
+                            font.pixelSize: 20
                         }
                         Item {
                             Layout.fillWidth: true
@@ -130,127 +83,20 @@ Item {
                         }
                     }
                 }
-                Rectangle {
-                    id: idWifiInfo
-                    anchors.left: parent.left
-                    anchors.right: parent.right
-                    anchors.leftMargin: 120
-                    anchors.rightMargin: 120
-                    anchors.top: idBackButton.bottom
-                    color: "White"
-                    radius: 20
-                    height: 150
-                    ColumnLayout {
+                Item {
+                    RowLayout {
                         anchors.fill: parent
-                        Item {
-                            Layout.fillWidth: true
-                            Layout.preferredHeight: parent.height / 3
-                            Layout.topMargin: 15
-                            Text {
-                                anchors.left: parent.left
-                                anchors.leftMargin: 20
-                                text: "네트워크 속도"
-                                font.family: "맑은 고딕"
-                                font.pixelSize: 12
-                            }
-                            Text {
-                                anchors.right: parent.right
-                                anchors.rightMargin: 20
-                                text: "780Mbps"
-                                font.family: "맑은 고딕"
-                                font.pixelSize: 14
-                            }
+                        Button {
+                            text: "SILENT"
+                            onClicked: idSoundMode.text = text
                         }
-                        Item {
-                            Layout.fillWidth: true
-                            Layout.preferredHeight: parent.height / 3
-                            Layout.topMargin: -10
-                            Text {
-                                anchors.left: parent.left
-                                anchors.leftMargin: 20
-                                text: "보안"
-                                font.family: "맑은 고딕"
-                                font.pixelSize: 12
-                            }
-                            Text {
-                                anchors.right: parent.right
-                                anchors.rightMargin: 20
-                                text: "WPA2 PSK"
-                                font.family: "맑은 고딕"
-                                font.pixelSize: 14
-                            }
+                        Button {
+                            text: "VIBRATE"
+                            onClicked: idSoundMode.text = text
                         }
-                        Item {
-                            Layout.fillWidth: true
-                            Layout.preferredHeight: parent.height / 3
-                            Layout.topMargin: -10
-                            Text {
-                                anchors.left: parent.left
-                                anchors.leftMargin: 20
-                                text: "IP 주소"
-                                font.family: "맑은 고딕"
-                                font.pixelSize: 12
-                            }
-                            Text {
-                                anchors.right: parent.right
-                                anchors.rightMargin: 20
-                                text: "192.168.0.2\nfe80::70ca:8aff:fefc:297"
-                                horizontalAlignment: Text.AlignRight
-                                font.family: "맑은 고딕"
-                                font.pixelSize: 14
-                            }
-                        }
-                    }
-                }
-                Rectangle {
-                    id: idWifiAdvanced
-                    anchors.left: parent.left
-                    anchors.right: parent.right
-                    anchors.leftMargin: 120
-                    anchors.rightMargin: 120
-                    anchors.top: idWifiInfo.bottom
-                    anchors.topMargin: 20
-                    color: "White"
-                    radius: 20
-                    height: 100
-                    ColumnLayout {
-                        anchors.fill: parent
-                        Item {
-                            Layout.fillWidth: true
-                            Layout.preferredHeight: parent.height / 2
-                            RowLayout {
-                                anchors.fill: parent
-                                Text {
-                                    Layout.alignment: Qt.AlignLeft
-                                    Layout.leftMargin: 20
-                                    text: "자동으로 다시 연결"
-                                    font.family: "맑은 고딕"
-                                    font.pixelSize: 12
-                                }
-                                Switch {
-                                    Layout.alignment: Qt.AlignRight
-                                    Layout.rightMargin: 20
-                                    anchors.topMargin: -10
-                                }
-                            }
-                        }
-                        Item {
-                            Layout.fillWidth: true
-                            Layout.preferredHeight: parent.height / 2
-                            Text {
-                                anchors.left: parent.left
-                                anchors.leftMargin: 20
-                                text: "보안"
-                                font.family: "맑은 고딕"
-                                font.pixelSize: 12
-                            }
-                            Text {
-                                anchors.right: parent.right
-                                anchors.rightMargin: 20
-                                text: "WPA2 PSK"
-                                font.family: "맑은 고딕"
-                                font.pixelSize: 14
-                            }
+                        Button {
+                            text: "SOUND"
+                            onClicked: idSoundMode.text = text
                         }
                     }
                 }

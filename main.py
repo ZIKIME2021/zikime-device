@@ -7,14 +7,17 @@ from PySide2.QtGui import QGuiApplication
 from PySide2.QtQml import QQmlApplicationEngine, qmlRegisterType
 from PySide2.QtQuickControls2 import QQuickStyle
 
-from number import Number
+from settings import Settings
+from const import Const
 
 if __name__ == "__main__":
     app = QGuiApplication(sys.argv)
     QQuickStyle.setStyle("Material")
     
     engine = QQmlApplicationEngine()
-    qmlRegisterType(Number, "com.zikime.number", 1, 0, "Number")
+    
+    qmlRegisterType(Settings, "com.zikime.settings", 1, 0, "Settings")
+    qmlRegisterType(Const, "com.zikime.const", 1, 0, "Const")
     
     engine.load(os.fspath(Path(__file__).resolve().parent / "main.qml"))
     
