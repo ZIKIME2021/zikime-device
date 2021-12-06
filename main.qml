@@ -60,7 +60,10 @@ ApplicationWindow {
                     }
                     MouseArea {
                         anchors.fill: parent
-                        onClicked: idWindow.regist()
+                        onClicked: {
+                            idPopup.open()
+                            //idWindow.regist()
+                        }
                     }
                 }
                 Item {
@@ -103,8 +106,22 @@ ApplicationWindow {
             modal: true
             focus: true
 
-            Label {
-                text: "this is popup"
+            ColumnLayout {
+                anchors.fill: parent
+            Text {
+                Layout.alignment: Qt.AlignHCenter
+                text: "Regist Number"
+                font.family: "Arial"
+                font.pixelSize: 24
+                font.bold: true
+            }
+            Text {
+                Layout.alignment: Qt.AlignHCenter
+                text: "1234"
+                font.family: "Arial"
+                font.pixelSize: 20
+                font.bold: true
+            }
             }
             Button {
                 anchors.left: parent.left
