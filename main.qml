@@ -55,12 +55,12 @@ ApplicationWindow {
                     Layout.fillWidth: true
                     Image {
                         anchors.fill: parent
-                        source: "./res/video.png"
+                        source: "./res/regist.png"
                         fillMode: Image.PreserveAspectFit
                     }
                     MouseArea {
                         anchors.fill: parent
-                        onClicked: pushView("VideoList.qml")
+                        onClicked: idWindow.regist()
                     }
                 }
                 Item {
@@ -149,22 +149,16 @@ ApplicationWindow {
         }
     }
 
-    function refresh()
+    function regist()
     {
         var xhr = new XMLHttpRequest;
-        xhr.open("GET", "http://127.0.0.1:5000/test")
+        xhr.open("GET", "http://www.zikime.com:9999/device/1")
         xhr.onreadystatechange = function() {
             if (xhr.readyState === XMLHttpRequest.DONE) {
                 var json = xhr.responseText
 
                 var jsonObject = JSON.parse(json)
-                if(jsonObject["test"] === "True")
-                {
-                    console.log("TEST!!")
-                    idPopup.open()
-                }
-                else
-                    console.log("FALSE")
+                console.log(jsonObject.id)
             }
         }
         xhr.send()
