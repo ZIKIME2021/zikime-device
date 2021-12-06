@@ -51,7 +51,7 @@ Item {
                             id: idSoundMode
                             Layout.alignment: Qt.AlignHCenter
                             Layout.topMargin: 50
-                            text: "None"
+                            text: settings.SettingsInfo
                             font.family: "Arial"
                             font.pixelSize: 20
                         }
@@ -88,15 +88,24 @@ Item {
                         anchors.fill: parent
                         Button {
                             text: "SILENT"
-                            onClicked: idSoundMode.text = text
+                            onClicked: {
+                                idSoundMode.text = text
+                                settings.set_settings(text)
+                            }
                         }
                         Button {
                             text: "VIBRATE"
-                            onClicked: idSoundMode.text = text
+                            onClicked: {
+                                idSoundMode.text = text
+                                settings.set_settings(text)
+                            }
                         }
                         Button {
                             text: "SOUND"
-                            onClicked: idSoundMode.text = text
+                            onClicked: {
+                                idSoundMode.text = text
+                                settings.set_settings(text)
+                            }
                         }
                     }
                 }
