@@ -4,6 +4,8 @@ import QtQuick.Controls.Material 2.12
 import QtQuick.Layouts 1.15
 import QtQuick.Window 2.12
 
+import com.zikime.updatemanager 1.0
+
 ApplicationWindow {
     id: idWindow
     width: 960
@@ -14,6 +16,21 @@ ApplicationWindow {
     Material.theme: Material.Light
     Material.accent: Material.Blue
 
+    property int deviceId: 0
+    property string serial: ''
+    property string gpsInfo: ''
+    property string cameraInfo: ''
+    property int stateId: 0
+
+    property string latitude: ''
+    property string longitude: ''
+    property string altitude: ''
+    property bool power: false
+    property string mode: ''
+    property string ipAddress: ''
+    property string updateDate: ''
+    
+    property UpdateManager updateManager: UpdateManager{}
     StackView {
         id: idStackView
         anchors.fill: parent
@@ -37,16 +54,10 @@ ApplicationWindow {
                         source: "./res/wifi.png"
                         fillMode: Image.PreserveAspectFit
                     }
-                    Timer {
-                        id: idTimer
-                        interval: 3000
-                        running: false
-                        repeat: false
-                        onTriggered: idPopup.close()
-                    }
                     MouseArea {
                         anchors.fill: parent
                         onClicked: pushView("WifiList.qml")
+                        //onClicked: idWindow.get_device_info("10000000a6f28908")
                     }
                 }
                 Item {
@@ -62,7 +73,7 @@ ApplicationWindow {
                         anchors.fill: parent
                         onClicked: {
                             idPopup.open()
-                            //idWindow.regist()
+                            idWindow.regist()
                         }
                     }
                 }
@@ -74,6 +85,10 @@ ApplicationWindow {
                         anchors.fill: parent
                         source: "./res/sos.png"
                         fillMode: Image.PreserveAspectFit
+                    }
+                    MouseArea {
+                        anchors.fill: parent
+                        onClicked: idWindow.updateManager.send_sos()
                     }
                 }
                 Item {
@@ -116,8 +131,9 @@ ApplicationWindow {
                 font.bold: true
             }
             Text {
+                id: idRegistText
                 Layout.alignment: Qt.AlignHCenter
-                text: "1234"
+                text: ""
                 font.family: "Arial"
                 font.pixelSize: 20
                 font.bold: true
@@ -165,19 +181,82 @@ ApplicationWindow {
             }
         }
     }
-
-    function regist()
+    
+    function getDeviceInfo(serial)
     {
         var xhr = new XMLHttpRequest;
-        xhr.open("GET", "http://www.zikime.com:9999/device/1")
+        xhr.open("GET", "http://localhost:9999/device/" + serial)
         xhr.onreadystatechange = function() {
             if (xhr.readyState === XMLHttpRequest.DONE) {
                 var json = xhr.responseText
 
                 var jsonObject = JSON.parse(json)
-                console.log(jsonObject.id)
+                idWindow.deviceId = jsonObject["id"]
+                idWindow.serial = jsonObject["serial"]
+                idWindow.gpsInfo = jsonObject["gps_info"]
+                idWindow.cameraInfo = jsonObject["camera_info"]
+                idWindow.stateId = jsonObject["state_id"]
             }
         }
         xhr.send()
+    }
+
+    function recvState(stateId)
+    {
+        var xhr = new XMLHttpRequest;
+        xhr.open("GET", "http://localhost:9999/state/" + stateId, true)
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === XMLHttpRequest.DONE) {
+                var json = xhr.responseText
+
+                var jsonObject = JSON.parse(json)
+
+                latitude = jsonObject["latitude"]
+                longitude = jsonObject["longitude"]
+                altitude = jsonObject["altitude"]
+                power = jsonObject["power"]
+                mode = jsonObject["mode"]
+                ipAddress = jsonObject["ip_address"]
+                updateDate = jsonObject["update_date"]
+            }
+        }
+        xhr.send()
+    }
+
+    function updateState(stateId)
+    {
+        var xhr = new XMLHttpRequest;
+        xhr.open("PUT", "http://www.zikime.com:9999/state/" + idWindow.stateId, true)
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === XMLHttpRequest.DONE) {
+                var json = xhr.responseText
+                var jsonObject = JSON.parse(json)
+
+                console.log(json)
+            }
+        }
+
+        var body_data = {
+            "latitude": "107.6555",
+            "longitude": "67.063",
+            "altitude": "42.1326",
+            "power": true,
+            "ip_address": "192.168.0.1",
+            "mode": "NORMAL"
+        };
+
+        xhr.setRequestHeader("Content-Type", "application/json");
+        xhr.send(JSON.stringify(body_data))
+    }
+
+    Timer {
+        id: idTimer
+        interval: 1000
+        running: true
+        repeat: true
+        onTriggered: {
+            idWindow.getDeviceInfo("10000000a6f28908")
+            idWindow.updateState(idWindow.deviceId)
+        }
     }
 }
