@@ -210,7 +210,7 @@ ApplicationWindow {
     function recvState(stateId)
     {
         var xhr = new XMLHttpRequest;
-        xhr.open("GET", "http://localhost:9999/state/" + stateId, true)
+        xhr.open("GET", "http://www.zikime.com:9999/state/" + stateId, true)
         xhr.onreadystatechange = function() {
             if (xhr.readyState === XMLHttpRequest.DONE) {
                 var json = xhr.responseText
@@ -232,7 +232,7 @@ ApplicationWindow {
     function updateState(stateId)
     {
         var xhr = new XMLHttpRequest;
-        xhr.open("PUT", "http://localhost:9999/state/" + idWindow.stateId, true)
+        xhr.open("PUT", "http://www.zikime.com:9999/state/" + idWindow.stateId, true)
         xhr.onreadystatechange = function() {
             if (xhr.readyState === XMLHttpRequest.DONE) {
                 var json = xhr.responseText
