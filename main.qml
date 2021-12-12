@@ -5,6 +5,7 @@ import QtQuick.Layouts 1.15
 import QtQuick.Window 2.12
 
 import com.zikime.updatemanager 1.0
+import com.zikime.gpsmanager 1.0
 
 ApplicationWindow {
     id: idWindow
@@ -31,6 +32,11 @@ ApplicationWindow {
     property string updateDate: ''
     
     property UpdateManager updateManager: UpdateManager{}
+    property GPSManager gpsManager: GPSManager{}
+
+    property double current_latitude: 0.0
+    property double current_longitude: 0.0
+    
     StackView {
         id: idStackView
         anchors.fill: parent
@@ -211,13 +217,13 @@ ApplicationWindow {
 
                 var jsonObject = JSON.parse(json)
 
-                latitude = jsonObject["latitude"]
-                longitude = jsonObject["longitude"]
-                altitude = jsonObject["altitude"]
-                power = jsonObject["power"]
-                mode = jsonObject["mode"]
-                ipAddress = jsonObject["ip_address"]
-                updateDate = jsonObject["update_date"]
+                idWindow.latitude = jsonObject["latitude"]
+                idWindow.longitude = jsonObject["longitude"]
+                idWindow.altitude = jsonObject["altitude"]
+                idWindow.power = jsonObject["power"]
+                idWindow.mode = jsonObject["mode"]
+                idWindow.ipAddress = jsonObject["ip_address"]
+                idWindow.updateDate = jsonObject["update_date"]
             }
         }
         xhr.send()
@@ -226,7 +232,7 @@ ApplicationWindow {
     function updateState(stateId)
     {
         var xhr = new XMLHttpRequest;
-        xhr.open("PUT", "http://www.zikime.com:9999/state/" + idWindow.stateId, true)
+        xhr.open("PUT", "http://localhost:9999/state/" + idWindow.stateId, true)
         xhr.onreadystatechange = function() {
             if (xhr.readyState === XMLHttpRequest.DONE) {
                 var json = xhr.responseText
@@ -237,8 +243,8 @@ ApplicationWindow {
         }
 
         var body_data = {
-            "latitude": "107.6555",
-            "longitude": "67.063",
+            "latitude": idWindow.current_latitude.toString(),
+            "longitude": idWindow.current_longitude.toString(),
             "altitude": "42.1326",
             "power": true,
             "ip_address": "192.168.0.1",
@@ -255,6 +261,10 @@ ApplicationWindow {
         running: true
         repeat: true
         onTriggered: {
+            gpsManager.update_gps()
+            idWindow.current_latitude = gpsManager.latitude
+            idWindow.current_longitude = gpsManager.longitude
+
             idWindow.getDeviceInfo("10000000a6f28908")
             idWindow.updateState(idWindow.deviceId)
         }

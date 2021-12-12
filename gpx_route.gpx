@@ -1,0 +1,573 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx creator="Veloga Cycle" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd" version="1.1" xmlns="http://www.topografix.com/GPX/1/1">
+<trk>
+<trkseg>
+<!-- 11@11.11, AppVer:0.2.9 -->
+<trkpt lat="37.5351891" lon="127.0061000">
+<ele>47.2816744</ele>
+<time>2021-03-18T01:36:55.814Z</time>
+<speed>12.7848</speed>
+<cmt><!--RidingState(E_RIDING_REC),AppState(Inactive),GPSValid(Valid),currentSpeed(46.0253),isZeroSpeedFromRecordingStart(False),startTimeFromZeroSpeed(-1),recordingTime(1),averageSpeed(46.0253),NaN|isZeroSpeedFromRecordingStart or isAppActive--></cmt></trkpt>
+<trkpt lat="37.5350830" lon="127.0061754">
+<ele>47.5042340</ele>
+<time>2021-03-18T01:36:56.814Z</time>
+<speed>13.1038</speed>
+<cmt><!--RidingState(E_RIDING_REC),AppState(Inactive),GPSValid(Valid),currentSpeed(47.1737),isZeroSpeedFromRecordingStart(False),startTimeFromZeroSpeed(-1),recordingTime(2),averageSpeed(46.5995),NaN|isZeroSpeedFromRecordingStart or isAppActive--></cmt></trkpt>
+<trkpt lat="37.5349765" lon="127.0062596">
+<ele>47.3105420</ele>
+<time>2021-03-18T01:36:57.814Z</time>
+<speed>13.7634</speed>
+<cmt><!--RidingState(E_RIDING_REC),AppState(Inactive),GPSValid(Valid),currentSpeed(49.5482),isZeroSpeedFromRecordingStart(False),startTimeFromZeroSpeed(-1),recordingTime(3),averageSpeed(47.5824),NaN|isZeroSpeedFromRecordingStart or isAppActive--></cmt></trkpt>
+<trkpt lat="37.5348676" lon="127.0063478">
+<ele>47.1429202</ele>
+<time>2021-03-18T01:36:58.814Z</time>
+<speed>14.3522</speed>
+<cmt><!--RidingState(E_RIDING_REC),AppState(Inactive),GPSValid(Valid),currentSpeed(51.6679),isZeroSpeedFromRecordingStart(False),startTimeFromZeroSpeed(-1),recordingTime(4),averageSpeed(48.6038),NaN|isZeroSpeedFromRecordingStart or isAppActive--></cmt></trkpt>
+<trkpt lat="37.5347565" lon="127.0064356">
+<ele>47.1175487</ele>
+<time>2021-03-18T01:36:59.815Z</time>
+<speed>14.4721</speed>
+<cmt><!--RidingState(E_RIDING_REC),AppState(Inactive),GPSValid(Valid),currentSpeed(52.0996),isZeroSpeedFromRecordingStart(False),startTimeFromZeroSpeed(-1),recordingTime(5),averageSpeed(49.3029),NaN|isZeroSpeedFromRecordingStart or isAppActive--></cmt></trkpt>
+<trkpt lat="37.5346421" lon="127.0065208">
+<ele>47.4578368</ele>
+<time>2021-03-18T01:37:00.814Z</time>
+<speed>14.6141</speed>
+<cmt><!--RidingState(E_RIDING_REC),AppState(Inactive),GPSValid(Valid),currentSpeed(52.6108),isZeroSpeedFromRecordingStart(False),startTimeFromZeroSpeed(-1),recordingTime(6),averageSpeed(49.8542),NaN|isZeroSpeedFromRecordingStart or isAppActive--></cmt></trkpt>
+<trkpt lat="37.5345384" lon="127.0065979">
+<ele>47.9167844</ele>
+<time>2021-03-18T01:37:01.815Z</time>
+<speed>13.7399</speed>
+<cmt><!--RidingState(E_RIDING_REC),AppState(Inactive),GPSValid(Valid),currentSpeed(49.4636),isZeroSpeedFromRecordingStart(False),startTimeFromZeroSpeed(-1),recordingTime(7),averageSpeed(49.7984),NaN|isZeroSpeedFromRecordingStart or isAppActive--></cmt></trkpt>
+<trkpt lat="37.5344368" lon="127.0066780">
+<ele>48.5880076</ele>
+<time>2021-03-18T01:37:02.815Z</time>
+<speed>13.3335</speed>
+<cmt><!--RidingState(E_RIDING_REC),AppState(Inactive),GPSValid(Valid),currentSpeed(48.0006),isZeroSpeedFromRecordingStart(False),startTimeFromZeroSpeed(-1),recordingTime(8),averageSpeed(49.5737),NaN|isZeroSpeedFromRecordingStart or isAppActive--></cmt></trkpt>
+<trkpt lat="37.5343429" lon="127.0067498">
+<ele>48.3816132</ele>
+<time>2021-03-18T01:37:03.815Z</time>
+<speed>11.6632</speed>
+<cmt><!--RidingState(E_RIDING_REC),AppState(Inactive),GPSValid(Valid),currentSpeed(41.9875),isZeroSpeedFromRecordingStart(False),startTimeFromZeroSpeed(-1),recordingTime(9),averageSpeed(48.7308),NaN|isZeroSpeedFromRecordingStart or isAppActive--></cmt></trkpt>
+<trkpt lat="37.5342616" lon="127.0068081">
+<ele>47.9161947</ele>
+<time>2021-03-18T01:37:04.814Z</time>
+<speed>10.0535</speed>
+<cmt><!--RidingState(E_RIDING_REC),AppState(Inactive),GPSValid(Valid),currentSpeed(36.1926),isZeroSpeedFromRecordingStart(False),startTimeFromZeroSpeed(-1),recordingTime(10),averageSpeed(47.477),NaN|isZeroSpeedFromRecordingStart or isAppActive--></cmt></trkpt>
+<trkpt lat="37.5341957" lon="127.0068618">
+<ele>46.5733226</ele>
+<time>2021-03-18T01:37:05.814Z</time>
+<speed>8.51575</speed>
+<cmt><!--RidingState(E_RIDING_REC),AppState(Inactive),GPSValid(Valid),currentSpeed(30.6567),isZeroSpeedFromRecordingStart(False),startTimeFromZeroSpeed(-1),recordingTime(11),averageSpeed(45.9479),NaN|isZeroSpeedFromRecordingStart or isAppActive--></cmt></trkpt>
+<trkpt lat="37.5341417" lon="127.0069007">
+<ele>46.4371679</ele>
+<time>2021-03-18T01:37:06.814Z</time>
+<speed>6.63494</speed>
+<cmt><!--RidingState(E_RIDING_REC),AppState(Inactive),GPSValid(Valid),currentSpeed(23.8858),isZeroSpeedFromRecordingStart(False),startTimeFromZeroSpeed(-1),recordingTime(12),averageSpeed(44.1094),NaN|isZeroSpeedFromRecordingStart or isAppActive--></cmt></trkpt>
+<trkpt lat="37.5341045" lon="127.0069288">
+<ele>46.2449640</ele>
+<time>2021-03-18T01:37:07.814Z</time>
+<speed>4.79654</speed>
+<cmt><!--RidingState(E_RIDING_REC),AppState(Inactive),GPSValid(Valid),currentSpeed(17.2675),isZeroSpeedFromRecordingStart(False),startTimeFromZeroSpeed(-1),recordingTime(13),averageSpeed(42.0446),NaN|isZeroSpeedFromRecordingStart or isAppActive--></cmt></trkpt>
+<trkpt lat="37.5340806" lon="127.0069472">
+<ele>46.1336649</ele>
+<time>2021-03-18T01:37:08.814Z</time>
+<speed>2.71069</speed>
+<cmt><!--RidingState(E_RIDING_REC),AppState(Inactive),GPSValid(Valid),currentSpeed(9.75848),isZeroSpeedFromRecordingStart(False),startTimeFromZeroSpeed(-1),recordingTime(14),averageSpeed(39.7385),NaN|isZeroSpeedFromRecordingStart or isAppActive--></cmt></trkpt>
+<trkpt lat="37.5340728" lon="127.0069521">
+<ele>45.9983871</ele>
+<time>2021-03-18T01:37:09.814Z</time>
+<speed>1.13245</speed>
+<cmt><!--RidingState(E_RIDING_REC),AppState(Inactive),GPSValid(Valid),currentSpeed(4.07682),isZeroSpeedFromRecordingStart(False),startTimeFromZeroSpeed(-1),recordingTime(15),averageSpeed(37.361),NaN|isZeroSpeedFromRecordingStart or isAppActive--></cmt></trkpt>
+<trkpt lat="37.5340728" lon="127.0069521">
+<ele>45.9983871</ele>
+<time>2021-03-18T01:37:10.815Z</time>
+<speed>0</speed>
+<cmt><!--RidingState(E_RIDING_REC),AppState(Inactive),GPSValid(Valid),currentSpeed(0),isZeroSpeedFromRecordingStart(False),startTimeFromZeroSpeed(16),recordingTime(16),averageSpeed(35.0259),NaN|isZeroSpeedFromRecordingStart or isAppActive--></cmt></trkpt>
+<trkpt lat="37.5340728" lon="127.0069521">
+<ele>45.9983871</ele>
+<time>2021-03-18T01:37:11.814Z</time>
+<speed>0</speed>
+<cmt><!--RidingState(E_RIDING_REC),AppState(Inactive),GPSValid(Valid),currentSpeed(0),isZeroSpeedFromRecordingStart(False),startTimeFromZeroSpeed(16),recordingTime(17),averageSpeed(32.9656),NaN|isZeroSpeedFromRecordingStart or isAppActive--></cmt></trkpt>
+<trkpt lat="37.5340728" lon="127.0069521">
+<ele>45.9983871</ele>
+<time>2021-03-18T01:37:12.815Z</time>
+<speed>0</speed>
+<cmt><!--RidingState(E_RIDING_REC),AppState(Inactive),GPSValid(Valid),currentSpeed(0),isZeroSpeedFromRecordingStart(False),startTimeFromZeroSpeed(16),recordingTime(18),averageSpeed(31.1342),NaN|isZeroSpeedFromRecordingStart or isAppActive--></cmt></trkpt>
+<trkpt lat="37.5340728" lon="127.0069521">
+<ele>45.9983871</ele>
+<time>2021-03-18T01:37:13.815Z</time>
+<speed>0</speed>
+<cmt><!--RidingState(E_RIDING_REC),AppState(Inactive),GPSValid(Valid),currentSpeed(0),isZeroSpeedFromRecordingStart(False),startTimeFromZeroSpeed(16),recordingTime(19),averageSpeed(29.4955),NaN|isZeroSpeedFromRecordingStart or isAppActive--></cmt></trkpt>
+<trkpt lat="37.5340728" lon="127.0069521">
+<ele>45.9983871</ele>
+<time>2021-03-18T01:37:39.813Z</time>
+<speed>0</speed>
+<cmt><!--RidingState(E_RIDING_REC),AppState(Inactive),GPSValid(Valid),currentSpeed(0),isZeroSpeedFromRecordingStart(False),startTimeFromZeroSpeed(16),recordingTime(20),averageSpeed(28.0208),NaN|isZeroSpeedFromRecordingStart or isAppActive--></cmt></trkpt>
+<trkpt lat="37.5339025" lon="127.0070457">
+<ele>45.8702880</ele>
+<time>2021-03-18T01:38:46.813Z</time>
+<speed>4.63589</speed>
+<cmt><!--RidingState(E_RIDING_REC),AppState(Inactive),GPSValid(Valid),currentSpeed(16.6892),isZeroSpeedFromRecordingStart(False),startTimeFromZeroSpeed(-1),recordingTime(21),averageSpeed(27.4812),NaN|isZeroSpeedFromRecordingStart or isAppActive--></cmt></trkpt>
+<trkpt lat="37.5338583" lon="127.0070793">
+<ele>45.6485225</ele>
+<time>2021-03-18T01:38:47.815Z</time>
+<speed>5.85318</speed>
+<cmt><!--RidingState(E_RIDING_REC),AppState(Inactive),GPSValid(Valid),currentSpeed(21.0714),isZeroSpeedFromRecordingStart(False),startTimeFromZeroSpeed(-1),recordingTime(22),averageSpeed(27.1898),NaN|isZeroSpeedFromRecordingStart or isAppActive--></cmt></trkpt>
+<trkpt lat="37.5338121" lon="127.0071133">
+<ele>45.6206766</ele>
+<time>2021-03-18T01:38:48.814Z</time>
+<speed>6.15818</speed>
+<cmt><!--RidingState(E_RIDING_REC),AppState(Inactive),GPSValid(Valid),currentSpeed(22.1694),isZeroSpeedFromRecordingStart(False),startTimeFromZeroSpeed(-1),recordingTime(23),averageSpeed(26.9715),NaN|isZeroSpeedFromRecordingStart or isAppActive--></cmt></trkpt>
+<trkpt lat="37.5337603" lon="127.0071511">
+<ele>45.5837599</ele>
+<time>2021-03-18T01:38:49.814Z</time>
+<speed>6.59882</speed>
+<cmt><!--RidingState(E_RIDING_REC),AppState(Inactive),GPSValid(Valid),currentSpeed(23.7558),isZeroSpeedFromRecordingStart(False),startTimeFromZeroSpeed(-1),recordingTime(24),averageSpeed(26.8375),NaN|isZeroSpeedFromRecordingStart or isAppActive--></cmt></trkpt>
+<trkpt lat="37.5337063" lon="127.0071923">
+<ele>45.6214966</ele>
+<time>2021-03-18T01:38:50.814Z</time>
+<speed>7.06172</speed>
+<cmt><!--RidingState(E_RIDING_REC),AppState(Inactive),GPSValid(Valid),currentSpeed(25.4222),isZeroSpeedFromRecordingStart(False),startTimeFromZeroSpeed(-1),recordingTime(25),averageSpeed(26.7809),NaN|isZeroSpeedFromRecordingStart or isAppActive--></cmt></trkpt>
+<trkpt lat="37.5336474" lon="127.0072362">
+<ele>45.9124008</ele>
+<time>2021-03-18T01:38:51.814Z</time>
+<speed>7.8587</speed>
+<cmt><!--RidingState(E_RIDING_REC),AppState(Inactive),GPSValid(Valid),currentSpeed(28.2913),isZeroSpeedFromRecordingStart(False),startTimeFromZeroSpeed(-1),recordingTime(26),averageSpeed(26.839),NaN|isZeroSpeedFromRecordingStart or isAppActive--></cmt></trkpt>
+<trkpt lat="37.5335849" lon="127.0072852">
+<ele>45.7867530</ele>
+<time>2021-03-18T01:38:52.814Z</time>
+<speed>8.38777</speed>
+<cmt><!--RidingState(E_RIDING_REC),AppState(Inactive),GPSValid(Valid),currentSpeed(30.196),isZeroSpeedFromRecordingStart(False),startTimeFromZeroSpeed(-1),recordingTime(27),averageSpeed(26.9634),NaN|isZeroSpeedFromRecordingStart or isAppActive--></cmt></trkpt>
+<trkpt lat="37.5335172" lon="127.0073398">
+<ele>45.8012754</ele>
+<time>2021-03-18T01:38:53.814Z</time>
+<speed>9.14184</speed>
+<cmt><!--RidingState(E_RIDING_REC),AppState(Inactive),GPSValid(Valid),currentSpeed(32.9106),isZeroSpeedFromRecordingStart(False),startTimeFromZeroSpeed(-1),recordingTime(28),averageSpeed(27.1758),NaN|isZeroSpeedFromRecordingStart or isAppActive--></cmt></trkpt>
+<trkpt lat="37.5334431" lon="127.0073992">
+<ele>45.7752029</ele>
+<time>2021-03-18T01:38:54.814Z</time>
+<speed>9.88684</speed>
+<cmt><!--RidingState(E_RIDING_REC),AppState(Inactive),GPSValid(Valid),currentSpeed(35.5926),isZeroSpeedFromRecordingStart(False),startTimeFromZeroSpeed(-1),recordingTime(29),averageSpeed(27.466),NaN|isZeroSpeedFromRecordingStart or isAppActive--></cmt></trkpt>
+<trkpt lat="37.5333679" lon="127.0074594">
+<ele>45.8400928</ele>
+<time>2021-03-18T01:38:55.813Z</time>
+<speed>10.0312</speed>
+<cmt><!--RidingState(E_RIDING_REC),AppState(Inactive),GPSValid(Valid),currentSpeed(36.1123),isZeroSpeedFromRecordingStart(False),startTimeFromZeroSpeed(-1),recordingTime(30),averageSpeed(27.7542),NaN|isZeroSpeedFromRecordingStart or isAppActive--></cmt></trkpt>
+<trkpt lat="37.5332942" lon="127.0075183">
+<ele>45.7447788</ele>
+<time>2021-03-18T01:38:56.814Z</time>
+<speed>9.91171</speed>
+<cmt><!--RidingState(E_RIDING_REC),AppState(Inactive),GPSValid(Valid),currentSpeed(35.6822),isZeroSpeedFromRecordingStart(False),startTimeFromZeroSpeed(-1),recordingTime(31),averageSpeed(28.0099),NaN|isZeroSpeedFromRecordingStart or isAppActive--></cmt></trkpt>
+<trkpt lat="37.5332199" lon="127.0075791">
+<ele>45.8789389</ele>
+<time>2021-03-18T01:38:57.814Z</time>
+<speed>10.0317</speed>
+<cmt><!--RidingState(E_RIDING_REC),AppState(Inactive),GPSValid(Valid),currentSpeed(36.1141),isZeroSpeedFromRecordingStart(False),startTimeFromZeroSpeed(-1),recordingTime(32),averageSpeed(28.2632),NaN|isZeroSpeedFromRecordingStart or isAppActive--></cmt></trkpt>
+<trkpt lat="37.5331417" lon="127.0076408">
+<ele>45.8654291</ele>
+<time>2021-03-18T01:38:58.813Z</time>
+<speed>10.4112</speed>
+<cmt><!--RidingState(E_RIDING_REC),AppState(Inactive),GPSValid(Valid),currentSpeed(37.4803),isZeroSpeedFromRecordingStart(False),startTimeFromZeroSpeed(-1),recordingTime(33),averageSpeed(28.5425),NaN|isZeroSpeedFromRecordingStart or isAppActive--></cmt></trkpt>
+<trkpt lat="37.5330595" lon="127.0077054">
+<ele>45.8377340</ele>
+<time>2021-03-18T01:38:59.814Z</time>
+<speed>10.7531</speed>
+<cmt><!--RidingState(E_RIDING_REC),AppState(Inactive),GPSValid(Valid),currentSpeed(38.7112),isZeroSpeedFromRecordingStart(False),startTimeFromZeroSpeed(-1),recordingTime(34),averageSpeed(28.8416),NaN|isZeroSpeedFromRecordingStart or isAppActive--></cmt></trkpt>
+<trkpt lat="37.5329739" lon="127.0077723">
+<ele>45.8137068</ele>
+<time>2021-03-18T01:39:00.814Z</time>
+<speed>11.1828</speed>
+<cmt><!--RidingState(E_RIDING_REC),AppState(Inactive),GPSValid(Valid),currentSpeed(40.2581),isZeroSpeedFromRecordingStart(False),startTimeFromZeroSpeed(-1),recordingTime(35),averageSpeed(29.1678),NaN|isZeroSpeedFromRecordingStart or isAppActive--></cmt></trkpt>
+<trkpt lat="37.5328884" lon="127.0078401">
+<ele>45.9374780</ele>
+<time>2021-03-18T01:39:01.814Z</time>
+<speed>11.4377</speed>
+<cmt><!--RidingState(E_RIDING_REC),AppState(Inactive),GPSValid(Valid),currentSpeed(41.1757),isZeroSpeedFromRecordingStart(False),startTimeFromZeroSpeed(-1),recordingTime(36),averageSpeed(29.5013),NaN|isZeroSpeedFromRecordingStart or isAppActive--></cmt></trkpt>
+<trkpt lat="37.5328031" lon="127.0079078">
+<ele>46.2612797</ele>
+<time>2021-03-18T01:39:02.814Z</time>
+<speed>11.4535</speed>
+<cmt><!--RidingState(E_RIDING_REC),AppState(Inactive),GPSValid(Valid),currentSpeed(41.2326),isZeroSpeedFromRecordingStart(False),startTimeFromZeroSpeed(-1),recordingTime(37),averageSpeed(29.8184),NaN|isZeroSpeedFromRecordingStart or isAppActive--></cmt></trkpt>
+<trkpt lat="37.5327200" lon="127.0079760">
+<ele>46.4131311</ele>
+<time>2021-03-18T01:39:03.814Z</time>
+<speed>11.2012</speed>
+<cmt><!--RidingState(E_RIDING_REC),AppState(Inactive),GPSValid(Valid),currentSpeed(40.3243),isZeroSpeedFromRecordingStart(False),startTimeFromZeroSpeed(-1),recordingTime(38),averageSpeed(30.0949),NaN|isZeroSpeedFromRecordingStart or isAppActive--></cmt></trkpt>
+<trkpt lat="37.5326322" lon="127.0080457">
+<ele>46.6276870</ele>
+<time>2021-03-18T01:39:04.814Z</time>
+<speed>11.2692</speed>
+<cmt><!--RidingState(E_RIDING_REC),AppState(Inactive),GPSValid(Valid),currentSpeed(40.5691),isZeroSpeedFromRecordingStart(False),startTimeFromZeroSpeed(-1),recordingTime(39),averageSpeed(30.3634),NaN|isZeroSpeedFromRecordingStart or isAppActive--></cmt></trkpt>
+<trkpt lat="37.5325454" lon="127.0081155">
+<ele>46.8595730</ele>
+<time>2021-03-18T01:39:05.814Z</time>
+<speed>11.4735</speed>
+<cmt><!--RidingState(E_RIDING_REC),AppState(Inactive),GPSValid(Valid),currentSpeed(41.3046),isZeroSpeedFromRecordingStart(False),startTimeFromZeroSpeed(-1),recordingTime(40),averageSpeed(30.637),NaN|isZeroSpeedFromRecordingStart or isAppActive--></cmt></trkpt>
+<trkpt lat="37.5324580" lon="127.0081856">
+<ele>47.2630214</ele>
+<time>2021-03-18T01:39:06.814Z</time>
+<speed>11.7216</speed>
+<cmt><!--RidingState(E_RIDING_REC),AppState(Inactive),GPSValid(Valid),currentSpeed(42.1978),isZeroSpeedFromRecordingStart(False),startTimeFromZeroSpeed(-1),recordingTime(41),averageSpeed(30.9189),NaN|isZeroSpeedFromRecordingStart or isAppActive--></cmt></trkpt>
+<trkpt lat="37.5323681" lon="127.0082574">
+<ele>47.7369898</ele>
+<time>2021-03-18T01:39:07.814Z</time>
+<speed>11.8874</speed>
+<cmt><!--RidingState(E_RIDING_REC),AppState(Inactive),GPSValid(Valid),currentSpeed(42.7946),isZeroSpeedFromRecordingStart(False),startTimeFromZeroSpeed(-1),recordingTime(42),averageSpeed(31.2017),NaN|isZeroSpeedFromRecordingStart or isAppActive--></cmt></trkpt>
+<trkpt lat="37.5322782" lon="127.0083323">
+<ele>48.3005105</ele>
+<time>2021-03-18T01:39:08.815Z</time>
+<speed>12.0368</speed>
+<cmt><!--RidingState(E_RIDING_REC),AppState(Inactive),GPSValid(Valid),currentSpeed(43.3325),isZeroSpeedFromRecordingStart(False),startTimeFromZeroSpeed(-1),recordingTime(43),averageSpeed(31.4838),NaN|isZeroSpeedFromRecordingStart or isAppActive--></cmt></trkpt>
+<trkpt lat="37.5321856" lon="127.0084067">
+<ele>48.8547170</ele>
+<time>2021-03-18T01:39:09.813Z</time>
+<speed>12.2027</speed>
+<cmt><!--RidingState(E_RIDING_REC),AppState(Inactive),GPSValid(Valid),currentSpeed(43.9297),isZeroSpeedFromRecordingStart(False),startTimeFromZeroSpeed(-1),recordingTime(44),averageSpeed(31.7667),NaN|isZeroSpeedFromRecordingStart or isAppActive--></cmt></trkpt>
+<trkpt lat="37.5320929" lon="127.0084851">
+<ele>49.5087151</ele>
+<time>2021-03-18T01:39:10.814Z</time>
+<speed>12.3334</speed>
+<cmt><!--RidingState(E_RIDING_REC),AppState(Inactive),GPSValid(Valid),currentSpeed(44.4002),isZeroSpeedFromRecordingStart(False),startTimeFromZeroSpeed(-1),recordingTime(45),averageSpeed(32.0474),NaN|isZeroSpeedFromRecordingStart or isAppActive--></cmt></trkpt>
+<trkpt lat="37.5319998" lon="127.0085644">
+<ele>50.6129550</ele>
+<time>2021-03-18T01:39:11.815Z</time>
+<speed>12.5227</speed>
+<cmt><!--RidingState(E_RIDING_REC),AppState(Inactive),GPSValid(Valid),currentSpeed(45.0817),isZeroSpeedFromRecordingStart(False),startTimeFromZeroSpeed(-1),recordingTime(46),averageSpeed(32.3308),NaN|isZeroSpeedFromRecordingStart or isAppActive--></cmt></trkpt>
+<trkpt lat="37.5319049" lon="127.0086433">
+<ele>51.1976662</ele>
+<time>2021-03-18T01:39:12.814Z</time>
+<speed>12.6676</speed>
+<cmt><!--RidingState(E_RIDING_REC),AppState(Inactive),GPSValid(Valid),currentSpeed(45.6034),isZeroSpeedFromRecordingStart(False),startTimeFromZeroSpeed(-1),recordingTime(47),averageSpeed(32.6132),NaN|isZeroSpeedFromRecordingStart or isAppActive--></cmt></trkpt>
+<trkpt lat="37.5318085" lon="127.0087258">
+<ele>51.7030063</ele>
+<time>2021-03-18T01:39:13.814Z</time>
+<speed>12.8879</speed>
+<cmt><!--RidingState(E_RIDING_REC),AppState(Inactive),GPSValid(Valid),currentSpeed(46.3964),isZeroSpeedFromRecordingStart(False),startTimeFromZeroSpeed(-1),recordingTime(48),averageSpeed(32.9003),NaN|isZeroSpeedFromRecordingStart or isAppActive--></cmt></trkpt>
+<trkpt lat="37.5313357" lon="127.0090934">
+<ele>53.5566551</ele>
+<time>2021-03-18T01:39:18.814Z</time>
+<speed>11.8178</speed>
+<cmt><!--RidingState(E_RIDING_REC),AppState(Inactive),GPSValid(Valid),currentSpeed(42.5441),isZeroSpeedFromRecordingStart(False),startTimeFromZeroSpeed(-1),recordingTime(49),averageSpeed(33.0971),NaN|isZeroSpeedFromRecordingStart or isAppActive--></cmt></trkpt>
+<trkpt lat="37.5312428" lon="127.0091615">
+<ele>54.0348146</ele>
+<time>2021-03-18T01:39:19.814Z</time>
+<speed>11.995</speed>
+<cmt><!--RidingState(E_RIDING_REC),AppState(Inactive),GPSValid(Valid),currentSpeed(43.182),isZeroSpeedFromRecordingStart(False),startTimeFromZeroSpeed(-1),recordingTime(50),averageSpeed(33.2988),NaN|isZeroSpeedFromRecordingStart or isAppActive--></cmt></trkpt>
+<trkpt lat="37.5311494" lon="127.0092285">
+<ele>54.6467264</ele>
+<time>2021-03-18T01:39:20.813Z</time>
+<speed>12.0228</speed>
+<cmt><!--RidingState(E_RIDING_REC),AppState(Inactive),GPSValid(Valid),currentSpeed(43.2821),isZeroSpeedFromRecordingStart(False),startTimeFromZeroSpeed(-1),recordingTime(51),averageSpeed(33.4946),NaN|isZeroSpeedFromRecordingStart or isAppActive--></cmt></trkpt>
+<trkpt lat="37.5310561" lon="127.0092971">
+<ele>55.0876365</ele>
+<time>2021-03-18T01:39:21.815Z</time>
+<speed>12.0234</speed>
+<cmt><!--RidingState(E_RIDING_REC),AppState(Inactive),GPSValid(Valid),currentSpeed(43.2842),isZeroSpeedFromRecordingStart(False),startTimeFromZeroSpeed(-1),recordingTime(52),averageSpeed(33.6828),NaN|isZeroSpeedFromRecordingStart or isAppActive--></cmt></trkpt>
+<trkpt lat="37.5309619" lon="127.0093646">
+<ele>55.4961439</ele>
+<time>2021-03-18T01:39:22.814Z</time>
+<speed>12.1206</speed>
+<cmt><!--RidingState(E_RIDING_REC),AppState(Inactive),GPSValid(Valid),currentSpeed(43.6342),isZeroSpeedFromRecordingStart(False),startTimeFromZeroSpeed(-1),recordingTime(53),averageSpeed(33.8706),NaN|isZeroSpeedFromRecordingStart or isAppActive--></cmt></trkpt>
+<trkpt lat="37.5308652" lon="127.0094326">
+<ele>55.8853011</ele>
+<time>2021-03-18T01:39:23.814Z</time>
+<speed>12.3194</speed>
+<cmt><!--RidingState(E_RIDING_REC),AppState(Inactive),GPSValid(Valid),currentSpeed(44.3498),isZeroSpeedFromRecordingStart(False),startTimeFromZeroSpeed(-1),recordingTime(54),averageSpeed(34.0646),NaN|isZeroSpeedFromRecordingStart or isAppActive--></cmt></trkpt>
+<trkpt lat="37.5307665" lon="127.0095021">
+<ele>56.4054380</ele>
+<time>2021-03-18T01:39:24.814Z</time>
+<speed>12.6055</speed>
+<cmt><!--RidingState(E_RIDING_REC),AppState(Inactive),GPSValid(Valid),currentSpeed(45.3798),isZeroSpeedFromRecordingStart(False),startTimeFromZeroSpeed(-1),recordingTime(55),averageSpeed(34.2704),NaN|isZeroSpeedFromRecordingStart or isAppActive--></cmt></trkpt>
+<trkpt lat="37.5306663" lon="127.0095732">
+<ele>56.7761847</ele>
+<time>2021-03-18T01:39:25.816Z</time>
+<speed>12.8544</speed>
+<cmt><!--RidingState(E_RIDING_REC),AppState(Inactive),GPSValid(Valid),currentSpeed(46.2758),isZeroSpeedFromRecordingStart(False),startTimeFromZeroSpeed(-1),recordingTime(56),averageSpeed(34.4848),NaN|isZeroSpeedFromRecordingStart or isAppActive--></cmt></trkpt>
+<trkpt lat="37.5305655" lon="127.0096472">
+<ele>57.1828558</ele>
+<time>2021-03-18T01:39:26.813Z</time>
+<speed>13.1588</speed>
+<cmt><!--RidingState(E_RIDING_REC),AppState(Inactive),GPSValid(Valid),currentSpeed(47.3717),isZeroSpeedFromRecordingStart(False),startTimeFromZeroSpeed(-1),recordingTime(57),averageSpeed(34.7108),NaN|isZeroSpeedFromRecordingStart or isAppActive--></cmt></trkpt>
+<trkpt lat="37.5304630" lon="127.0097255">
+<ele>57.5591655</ele>
+<time>2021-03-18T01:39:27.815Z</time>
+<speed>13.5014</speed>
+<cmt><!--RidingState(E_RIDING_REC),AppState(Inactive),GPSValid(Valid),currentSpeed(48.605),isZeroSpeedFromRecordingStart(False),startTimeFromZeroSpeed(-1),recordingTime(58),averageSpeed(34.9504),NaN|isZeroSpeedFromRecordingStart or isAppActive--></cmt></trkpt>
+<trkpt lat="37.5303561" lon="127.0098050">
+<ele>57.8603792</ele>
+<time>2021-03-18T01:39:28.814Z</time>
+<speed>13.8821</speed>
+<cmt><!--RidingState(E_RIDING_REC),AppState(Inactive),GPSValid(Valid),currentSpeed(49.9756),isZeroSpeedFromRecordingStart(False),startTimeFromZeroSpeed(-1),recordingTime(59),averageSpeed(35.2051),NaN|isZeroSpeedFromRecordingStart or isAppActive--></cmt></trkpt>
+<trkpt lat="37.5302455" lon="127.0098853">
+<ele>58.1677119</ele>
+<time>2021-03-18T01:39:29.815Z</time>
+<speed>14.2432</speed>
+<cmt><!--RidingState(E_RIDING_REC),AppState(Inactive),GPSValid(Valid),currentSpeed(51.2755),isZeroSpeedFromRecordingStart(False),startTimeFromZeroSpeed(-1),recordingTime(60),averageSpeed(35.4729),NaN|isZeroSpeedFromRecordingStart or isAppActive--></cmt></trkpt>
+<trkpt lat="37.5301331" lon="127.0099713">
+<ele>58.4731638</ele>
+<time>2021-03-18T01:39:30.814Z</time>
+<speed>14.6347</speed>
+<cmt><!--RidingState(E_RIDING_REC),AppState(Inactive),GPSValid(Valid),currentSpeed(52.6849),isZeroSpeedFromRecordingStart(False),startTimeFromZeroSpeed(-1),recordingTime(61),averageSpeed(35.7551),NaN|isZeroSpeedFromRecordingStart or isAppActive--></cmt></trkpt>
+<trkpt lat="37.5300204" lon="127.0100650">
+<ele>58.8111653</ele>
+<time>2021-03-18T01:39:31.814Z</time>
+<speed>15.0092</speed>
+<cmt><!--RidingState(E_RIDING_REC),AppState(Inactive),GPSValid(Valid),currentSpeed(54.0331),isZeroSpeedFromRecordingStart(False),startTimeFromZeroSpeed(-1),recordingTime(62),averageSpeed(36.0499),NaN|isZeroSpeedFromRecordingStart or isAppActive--></cmt></trkpt>
+<trkpt lat="37.5299066" lon="127.0101627">
+<ele>59.0229681</ele>
+<time>2021-03-18T01:39:32.815Z</time>
+<speed>15.2811</speed>
+<cmt><!--RidingState(E_RIDING_REC),AppState(Inactive),GPSValid(Valid),currentSpeed(55.012),isZeroSpeedFromRecordingStart(False),startTimeFromZeroSpeed(-1),recordingTime(63),averageSpeed(36.3509),NaN|isZeroSpeedFromRecordingStart or isAppActive--></cmt></trkpt>
+<trkpt lat="37.5297900" lon="127.0102659">
+<ele>59.2263238</ele>
+<time>2021-03-18T01:39:33.814Z</time>
+<speed>15.8364</speed>
+<cmt><!--RidingState(E_RIDING_REC),AppState(Inactive),GPSValid(Valid),currentSpeed(57.011),isZeroSpeedFromRecordingStart(False),startTimeFromZeroSpeed(-1),recordingTime(64),averageSpeed(36.6737),NaN|isZeroSpeedFromRecordingStart or isAppActive--></cmt></trkpt>
+<trkpt lat="37.5296698" lon="127.0103746">
+<ele>59.3509438</ele>
+<time>2021-03-18T01:39:34.814Z</time>
+<speed>16.366</speed>
+<cmt><!--RidingState(E_RIDING_REC),AppState(Inactive),GPSValid(Valid),currentSpeed(58.9176),isZeroSpeedFromRecordingStart(False),startTimeFromZeroSpeed(-1),recordingTime(65),averageSpeed(37.0159),NaN|isZeroSpeedFromRecordingStart or isAppActive--></cmt></trkpt>
+<trkpt lat="37.5295460" lon="127.0104889">
+<ele>59.3042342</ele>
+<time>2021-03-18T01:39:35.814Z</time>
+<speed>16.9734</speed>
+<cmt><!--RidingState(E_RIDING_REC),AppState(Inactive),GPSValid(Valid),currentSpeed(61.1042),isZeroSpeedFromRecordingStart(False),startTimeFromZeroSpeed(-1),recordingTime(66),averageSpeed(37.3809),NaN|isZeroSpeedFromRecordingStart or isAppActive--></cmt></trkpt>
+<trkpt lat="37.5294190" lon="127.0106083">
+<ele>59.1909678</ele>
+<time>2021-03-18T01:39:36.815Z</time>
+<speed>17.6111</speed>
+<cmt><!--RidingState(E_RIDING_REC),AppState(Inactive),GPSValid(Valid),currentSpeed(63.4),isZeroSpeedFromRecordingStart(False),startTimeFromZeroSpeed(-1),recordingTime(67),averageSpeed(37.7692),NaN|isZeroSpeedFromRecordingStart or isAppActive--></cmt></trkpt>
+<trkpt lat="37.5292877" lon="127.0107314">
+<ele>59.0965114</ele>
+<time>2021-03-18T01:39:37.814Z</time>
+<speed>18.1896</speed>
+<cmt><!--RidingState(E_RIDING_REC),AppState(Inactive),GPSValid(Valid),currentSpeed(65.4826),isZeroSpeedFromRecordingStart(False),startTimeFromZeroSpeed(-1),recordingTime(68),averageSpeed(38.1768),NaN|isZeroSpeedFromRecordingStart or isAppActive--></cmt></trkpt>
+<trkpt lat="37.5291568" lon="127.0108571">
+<ele>58.9811088</ele>
+<time>2021-03-18T01:39:38.814Z</time>
+<speed>18.1788</speed>
+<cmt><!--RidingState(E_RIDING_REC),AppState(Inactive),GPSValid(Valid),currentSpeed(65.4437),isZeroSpeedFromRecordingStart(False),startTimeFromZeroSpeed(-1),recordingTime(69),averageSpeed(38.5719),NaN|isZeroSpeedFromRecordingStart or isAppActive--></cmt></trkpt>
+<trkpt lat="37.5290255" lon="127.0109788">
+<ele>58.8777208</ele>
+<time>2021-03-18T01:39:39.815Z</time>
+<speed>18.0503</speed>
+<cmt><!--RidingState(E_RIDING_REC),AppState(Inactive),GPSValid(Valid),currentSpeed(64.9811),isZeroSpeedFromRecordingStart(False),startTimeFromZeroSpeed(-1),recordingTime(70),averageSpeed(38.9492),NaN|isZeroSpeedFromRecordingStart or isAppActive--></cmt></trkpt>
+<trkpt lat="37.5288960" lon="127.0110996">
+<ele>58.8229185</ele>
+<time>2021-03-18T01:39:40.814Z</time>
+<speed>17.8707</speed>
+<cmt><!--RidingState(E_RIDING_REC),AppState(Inactive),GPSValid(Valid),currentSpeed(64.3345),isZeroSpeedFromRecordingStart(False),startTimeFromZeroSpeed(-1),recordingTime(71),averageSpeed(39.3067),NaN|isZeroSpeedFromRecordingStart or isAppActive--></cmt></trkpt>
+<trkpt lat="37.5287677" lon="127.0112194">
+<ele>58.7223427</ele>
+<time>2021-03-18T01:39:41.815Z</time>
+<speed>17.698</speed>
+<cmt><!--RidingState(E_RIDING_REC),AppState(Inactive),GPSValid(Valid),currentSpeed(63.7128),isZeroSpeedFromRecordingStart(False),startTimeFromZeroSpeed(-1),recordingTime(72),averageSpeed(39.6457),NaN|isZeroSpeedFromRecordingStart or isAppActive--></cmt></trkpt>
+<trkpt lat="37.5286403" lon="127.0113394">
+<ele>58.6549593</ele>
+<time>2021-03-18T01:39:42.814Z</time>
+<speed>17.6414</speed>
+<cmt><!--RidingState(E_RIDING_REC),AppState(Inactive),GPSValid(Valid),currentSpeed(63.509),isZeroSpeedFromRecordingStart(False),startTimeFromZeroSpeed(-1),recordingTime(73),averageSpeed(39.9726),NaN|isZeroSpeedFromRecordingStart or isAppActive--></cmt></trkpt>
+<trkpt lat="37.5285125" lon="127.0114615">
+<ele>58.6529132</ele>
+<time>2021-03-18T01:39:43.814Z</time>
+<speed>17.7861</speed>
+<cmt><!--RidingState(E_RIDING_REC),AppState(Inactive),GPSValid(Valid),currentSpeed(64.03),isZeroSpeedFromRecordingStart(False),startTimeFromZeroSpeed(-1),recordingTime(74),averageSpeed(40.2977),NaN|isZeroSpeedFromRecordingStart or isAppActive--></cmt></trkpt>
+<trkpt lat="37.5283830" lon="127.0115849">
+<ele>58.6412785</ele>
+<time>2021-03-18T01:39:44.814Z</time>
+<speed>17.9823</speed>
+<cmt><!--RidingState(E_RIDING_REC),AppState(Inactive),GPSValid(Valid),currentSpeed(64.7363),isZeroSpeedFromRecordingStart(False),startTimeFromZeroSpeed(-1),recordingTime(75),averageSpeed(40.6236),NaN|isZeroSpeedFromRecordingStart or isAppActive--></cmt></trkpt>
+<trkpt lat="37.5282518" lon="127.0117093">
+<ele>58.5131135</ele>
+<time>2021-03-18T01:39:45.815Z</time>
+<speed>18.177</speed>
+<cmt><!--RidingState(E_RIDING_REC),AppState(Inactive),GPSValid(Valid),currentSpeed(65.4372),isZeroSpeedFromRecordingStart(False),startTimeFromZeroSpeed(-1),recordingTime(76),averageSpeed(40.9501),NaN|isZeroSpeedFromRecordingStart or isAppActive--></cmt></trkpt>
+<trkpt lat="37.5281238" lon="127.0118423">
+<ele>58.5288319</ele>
+<time>2021-03-18T01:39:46.814Z</time>
+<speed>17.9949</speed>
+<cmt><!--RidingState(E_RIDING_REC),AppState(Inactive),GPSValid(Valid),currentSpeed(64.7816),isZeroSpeedFromRecordingStart(False),startTimeFromZeroSpeed(-1),recordingTime(77),averageSpeed(41.2596),NaN|isZeroSpeedFromRecordingStart or isAppActive--></cmt></trkpt>
+<trkpt lat="37.5280020" lon="127.0119612">
+<ele>58.6969558</ele>
+<time>2021-03-18T01:39:47.814Z</time>
+<speed>17.8261</speed>
+<cmt><!--RidingState(E_RIDING_REC),AppState(Inactive),GPSValid(Valid),currentSpeed(64.174),isZeroSpeedFromRecordingStart(False),startTimeFromZeroSpeed(-1),recordingTime(78),averageSpeed(41.5533),NaN|isZeroSpeedFromRecordingStart or isAppActive--></cmt></trkpt>
+<trkpt lat="37.5278743" lon="127.0120789">
+<ele>58.6477590</ele>
+<time>2021-03-18T01:39:48.815Z</time>
+<speed>17.8935</speed>
+<cmt><!--RidingState(E_RIDING_REC),AppState(Inactive),GPSValid(Valid),currentSpeed(64.4166),isZeroSpeedFromRecordingStart(False),startTimeFromZeroSpeed(-1),recordingTime(79),averageSpeed(41.8427),NaN|isZeroSpeedFromRecordingStart or isAppActive--></cmt></trkpt>
+<trkpt lat="37.5277460" lon="127.0122034">
+<ele>58.7192157</ele>
+<time>2021-03-18T01:39:49.814Z</time>
+<speed>17.9601</speed>
+<cmt><!--RidingState(E_RIDING_REC),AppState(Inactive),GPSValid(Valid),currentSpeed(64.6564),isZeroSpeedFromRecordingStart(False),startTimeFromZeroSpeed(-1),recordingTime(80),averageSpeed(42.1279),NaN|isZeroSpeedFromRecordingStart or isAppActive--></cmt></trkpt>
+<trkpt lat="37.5276142" lon="127.0123315">
+<ele>58.7068672</ele>
+<time>2021-03-18T01:39:50.815Z</time>
+<speed>18.1736</speed>
+<cmt><!--RidingState(E_RIDING_REC),AppState(Inactive),GPSValid(Valid),currentSpeed(65.425),isZeroSpeedFromRecordingStart(False),startTimeFromZeroSpeed(-1),recordingTime(81),averageSpeed(42.4155),NaN|isZeroSpeedFromRecordingStart or isAppActive--></cmt></trkpt>
+<trkpt lat="37.5274790" lon="127.0124515">
+<ele>58.6308791</ele>
+<time>2021-03-18T01:39:51.814Z</time>
+<speed>18.3839</speed>
+<cmt><!--RidingState(E_RIDING_REC),AppState(Inactive),GPSValid(Valid),currentSpeed(66.182),isZeroSpeedFromRecordingStart(False),startTimeFromZeroSpeed(-1),recordingTime(82),averageSpeed(42.7054),NaN|isZeroSpeedFromRecordingStart or isAppActive--></cmt></trkpt>
+<trkpt lat="37.5273462" lon="127.0125698">
+<ele>58.5250209</ele>
+<time>2021-03-18T01:39:52.814Z</time>
+<speed>18.5136</speed>
+<cmt><!--RidingState(E_RIDING_REC),AppState(Inactive),GPSValid(Valid),currentSpeed(66.649),isZeroSpeedFromRecordingStart(False),startTimeFromZeroSpeed(-1),recordingTime(83),averageSpeed(42.9938),NaN|isZeroSpeedFromRecordingStart or isAppActive--></cmt></trkpt>
+<trkpt lat="37.5272131" lon="127.0126958">
+<ele>58.5122982</ele>
+<time>2021-03-18T01:39:53.814Z</time>
+<speed>18.531</speed>
+<cmt><!--RidingState(E_RIDING_REC),AppState(Inactive),GPSValid(Valid),currentSpeed(66.7116),isZeroSpeedFromRecordingStart(False),startTimeFromZeroSpeed(-1),recordingTime(84),averageSpeed(43.2762),NaN|isZeroSpeedFromRecordingStart or isAppActive--></cmt></trkpt>
+<trkpt lat="37.5270784" lon="127.0128236">
+<ele>58.4204836</ele>
+<time>2021-03-18T01:39:54.814Z</time>
+<speed>18.5461</speed>
+<cmt><!--RidingState(E_RIDING_REC),AppState(Inactive),GPSValid(Valid),currentSpeed(66.766),isZeroSpeedFromRecordingStart(False),startTimeFromZeroSpeed(-1),recordingTime(85),averageSpeed(43.5525),NaN|isZeroSpeedFromRecordingStart or isAppActive--></cmt></trkpt>
+<trkpt lat="37.5269442" lon="127.0129472">
+<ele>58.3753771</ele>
+<time>2021-03-18T01:39:55.815Z</time>
+<speed>18.3532</speed>
+<cmt><!--RidingState(E_RIDING_REC),AppState(Inactive),GPSValid(Valid),currentSpeed(66.0715),isZeroSpeedFromRecordingStart(False),startTimeFromZeroSpeed(-1),recordingTime(86),averageSpeed(43.8144),NaN|isZeroSpeedFromRecordingStart or isAppActive--></cmt></trkpt>
+<trkpt lat="37.5268135" lon="127.0130730">
+<ele>58.2610529</ele>
+<time>2021-03-18T01:39:56.814Z</time>
+<speed>18.2028</speed>
+<cmt><!--RidingState(E_RIDING_REC),AppState(Inactive),GPSValid(Valid),currentSpeed(65.5301),isZeroSpeedFromRecordingStart(False),startTimeFromZeroSpeed(-1),recordingTime(87),averageSpeed(44.064),NaN|isZeroSpeedFromRecordingStart or isAppActive--></cmt></trkpt>
+<trkpt lat="37.5266776" lon="127.0131985">
+<ele>58.3192497</ele>
+<time>2021-03-18T01:39:57.815Z</time>
+<speed>18.1436</speed>
+<cmt><!--RidingState(E_RIDING_REC),AppState(Inactive),GPSValid(Valid),currentSpeed(65.317),isZeroSpeedFromRecordingStart(False),startTimeFromZeroSpeed(-1),recordingTime(88),averageSpeed(44.3055),NaN|isZeroSpeedFromRecordingStart or isAppActive--></cmt></trkpt>
+<trkpt lat="37.5265413" lon="127.0133196">
+<ele>58.1192217</ele>
+<time>2021-03-18T01:39:58.815Z</time>
+<speed>18.023</speed>
+<cmt><!--RidingState(E_RIDING_REC),AppState(Inactive),GPSValid(Valid),currentSpeed(64.8828),isZeroSpeedFromRecordingStart(False),startTimeFromZeroSpeed(-1),recordingTime(89),averageSpeed(44.5367),NaN|isZeroSpeedFromRecordingStart or isAppActive--></cmt></trkpt>
+<trkpt lat="37.5264027" lon="127.0134369">
+<ele>57.7720283</ele>
+<time>2021-03-18T01:39:59.814Z</time>
+<speed>18.1017</speed>
+<cmt><!--RidingState(E_RIDING_REC),AppState(Inactive),GPSValid(Valid),currentSpeed(65.1661),isZeroSpeedFromRecordingStart(False),startTimeFromZeroSpeed(-1),recordingTime(90),averageSpeed(44.7659),NaN|isZeroSpeedFromRecordingStart or isAppActive--></cmt></trkpt>
+<trkpt lat="37.5262597" lon="127.0135484">
+<ele>57.7765617</ele>
+<time>2021-03-18T01:40:00.816Z</time>
+<speed>18.3904</speed>
+<cmt><!--RidingState(E_RIDING_REC),AppState(Inactive),GPSValid(Valid),currentSpeed(66.2054),isZeroSpeedFromRecordingStart(False),startTimeFromZeroSpeed(-1),recordingTime(91),averageSpeed(45.0015),NaN|isZeroSpeedFromRecordingStart or isAppActive--></cmt></trkpt>
+<trkpt lat="37.5261305" lon="127.0136674">
+<ele>57.6202534</ele>
+<time>2021-03-18T01:40:01.814Z</time>
+<speed>18.3893</speed>
+<cmt><!--RidingState(E_RIDING_REC),AppState(Inactive),GPSValid(Valid),currentSpeed(66.2015),isZeroSpeedFromRecordingStart(False),startTimeFromZeroSpeed(-1),recordingTime(92),averageSpeed(45.232),NaN|isZeroSpeedFromRecordingStart or isAppActive--></cmt></trkpt>
+<trkpt lat="37.5259967" lon="127.0137931">
+<ele>57.6841168</ele>
+<time>2021-03-18T01:40:02.814Z</time>
+<speed>18.4262</speed>
+<cmt><!--RidingState(E_RIDING_REC),AppState(Inactive),GPSValid(Valid),currentSpeed(66.3343),isZeroSpeedFromRecordingStart(False),startTimeFromZeroSpeed(-1),recordingTime(93),averageSpeed(45.4589),NaN|isZeroSpeedFromRecordingStart or isAppActive--></cmt></trkpt>
+<trkpt lat="37.5258604" lon="127.0139127">
+<ele>57.6148100</ele>
+<time>2021-03-18T01:40:03.814Z</time>
+<speed>18.4442</speed>
+<cmt><!--RidingState(E_RIDING_REC),AppState(Inactive),GPSValid(Valid),currentSpeed(66.3991),isZeroSpeedFromRecordingStart(False),startTimeFromZeroSpeed(-1),recordingTime(94),averageSpeed(45.6816),NaN|isZeroSpeedFromRecordingStart or isAppActive--></cmt></trkpt>
+<trkpt lat="37.5257259" lon="127.0140372">
+<ele>57.4186092</ele>
+<time>2021-03-18T01:40:04.814Z</time>
+<speed>18.3329</speed>
+<cmt><!--RidingState(E_RIDING_REC),AppState(Inactive),GPSValid(Valid),currentSpeed(65.9984),isZeroSpeedFromRecordingStart(False),startTimeFromZeroSpeed(-1),recordingTime(95),averageSpeed(45.8955),NaN|isZeroSpeedFromRecordingStart or isAppActive--></cmt></trkpt>
+<trkpt lat="37.5255915" lon="127.0141647">
+<ele>57.2617857</ele>
+<time>2021-03-18T01:40:05.815Z</time>
+<speed>18.2378</speed>
+<cmt><!--RidingState(E_RIDING_REC),AppState(Inactive),GPSValid(Valid),currentSpeed(65.6561),isZeroSpeedFromRecordingStart(False),startTimeFromZeroSpeed(-1),recordingTime(96),averageSpeed(46.1013),NaN|isZeroSpeedFromRecordingStart or isAppActive--></cmt></trkpt>
+<trkpt lat="37.5254600" lon="127.0142928">
+<ele>57.0463483</ele>
+<time>2021-03-18T01:40:06.815Z</time>
+<speed>18.0592</speed>
+<cmt><!--RidingState(E_RIDING_REC),AppState(Inactive),GPSValid(Valid),currentSpeed(65.0131),isZeroSpeedFromRecordingStart(False),startTimeFromZeroSpeed(-1),recordingTime(97),averageSpeed(46.2963),NaN|isZeroSpeedFromRecordingStart or isAppActive--></cmt></trkpt>
+<trkpt lat="37.5253292" lon="127.0144148">
+<ele>56.7806101</ele>
+<time>2021-03-18T01:40:07.814Z</time>
+<speed>17.9215</speed>
+<cmt><!--RidingState(E_RIDING_REC),AppState(Inactive),GPSValid(Valid),currentSpeed(64.5174),isZeroSpeedFromRecordingStart(False),startTimeFromZeroSpeed(-1),recordingTime(98),averageSpeed(46.4822),NaN|isZeroSpeedFromRecordingStart or isAppActive--></cmt></trkpt>
+<trkpt lat="37.5251981" lon="127.0145369">
+<ele>56.5896256</ele>
+<time>2021-03-18T01:40:08.815Z</time>
+<speed>17.8473</speed>
+<cmt><!--RidingState(E_RIDING_REC),AppState(Inactive),GPSValid(Valid),currentSpeed(64.2503),isZeroSpeedFromRecordingStart(False),startTimeFromZeroSpeed(-1),recordingTime(99),averageSpeed(46.6617),NaN|isZeroSpeedFromRecordingStart or isAppActive--></cmt></trkpt>
+<trkpt lat="37.5250677" lon="127.0146585">
+<ele>56.3978878</ele>
+<time>2021-03-18T01:40:09.814Z</time>
+<speed>17.797</speed>
+<cmt><!--RidingState(E_RIDING_REC),AppState(Inactive),GPSValid(Valid),currentSpeed(64.0692),isZeroSpeedFromRecordingStart(False),startTimeFromZeroSpeed(-1),recordingTime(100),averageSpeed(46.8358),NaN|isZeroSpeedFromRecordingStart or isAppActive--></cmt></trkpt>
+<trkpt lat="37.5249365" lon="127.0147782">
+<ele>55.9906352</ele>
+<time>2021-03-18T01:40:10.814Z</time>
+<speed>18.0318</speed>
+<cmt><!--RidingState(E_RIDING_REC),AppState(Inactive),GPSValid(Valid),currentSpeed(64.9145),isZeroSpeedFromRecordingStart(False),startTimeFromZeroSpeed(-1),recordingTime(101),averageSpeed(47.0148),NaN|isZeroSpeedFromRecordingStart or isAppActive--></cmt></trkpt>
+<trkpt lat="37.5248022" lon="127.0148953">
+<ele>55.6287870</ele>
+<time>2021-03-18T01:40:11.813Z</time>
+<speed>18.1965</speed>
+<cmt><!--RidingState(E_RIDING_REC),AppState(Inactive),GPSValid(Valid),currentSpeed(65.5074),isZeroSpeedFromRecordingStart(False),startTimeFromZeroSpeed(-1),recordingTime(102),averageSpeed(47.1961),NaN|isZeroSpeedFromRecordingStart or isAppActive--></cmt></trkpt>
+<trkpt lat="37.5246664" lon="127.0150145">
+<ele>55.3895478</ele>
+<time>2021-03-18T01:40:12.814Z</time>
+<speed>18.3292</speed>
+<cmt><!--RidingState(E_RIDING_REC),AppState(Inactive),GPSValid(Valid),currentSpeed(65.9851),isZeroSpeedFromRecordingStart(False),startTimeFromZeroSpeed(-1),recordingTime(103),averageSpeed(47.3785),NaN|isZeroSpeedFromRecordingStart or isAppActive--></cmt></trkpt>
+<trkpt lat="37.5245310" lon="127.0151308">
+<ele>55.3282367</ele>
+<time>2021-03-18T01:40:13.815Z</time>
+<speed>18.1678</speed>
+<cmt><!--RidingState(E_RIDING_REC),AppState(Inactive),GPSValid(Valid),currentSpeed(65.4041),isZeroSpeedFromRecordingStart(False),startTimeFromZeroSpeed(-1),recordingTime(104),averageSpeed(47.5518),NaN|isZeroSpeedFromRecordingStart or isAppActive--></cmt></trkpt>
+<trkpt lat="37.5243974" lon="127.0152488">
+<ele>55.0659096</ele>
+<time>2021-03-18T01:40:14.814Z</time>
+<speed>18.0937</speed>
+<cmt><!--RidingState(E_RIDING_REC),AppState(Inactive),GPSValid(Valid),currentSpeed(65.1373),isZeroSpeedFromRecordingStart(False),startTimeFromZeroSpeed(-1),recordingTime(105),averageSpeed(47.7193),NaN|isZeroSpeedFromRecordingStart or isAppActive--></cmt></trkpt>
+<trkpt lat="37.5242664" lon="127.0153668">
+<ele>54.8843019</ele>
+<time>2021-03-18T01:40:15.815Z</time>
+<speed>18.0009</speed>
+<cmt><!--RidingState(E_RIDING_REC),AppState(Inactive),GPSValid(Valid),currentSpeed(64.8032),isZeroSpeedFromRecordingStart(False),startTimeFromZeroSpeed(-1),recordingTime(106),averageSpeed(47.8805),NaN|isZeroSpeedFromRecordingStart or isAppActive--></cmt></trkpt>
+<trkpt lat="37.5241368" lon="127.0154871">
+<ele>54.7552901</ele>
+<time>2021-03-18T01:40:16.814Z</time>
+<speed>17.9534</speed>
+<cmt><!--RidingState(E_RIDING_REC),AppState(Inactive),GPSValid(Valid),currentSpeed(64.6322),isZeroSpeedFromRecordingStart(False),startTimeFromZeroSpeed(-1),recordingTime(107),averageSpeed(48.037),NaN|isZeroSpeedFromRecordingStart or isAppActive--></cmt></trkpt>
+<trkpt lat="37.5240077" lon="127.0156071">
+<ele>54.5152211</ele>
+<time>2021-03-18T01:40:17.815Z</time>
+<speed>17.7611</speed>
+<cmt><!--RidingState(E_RIDING_REC),AppState(Inactive),GPSValid(Valid),currentSpeed(63.94),isZeroSpeedFromRecordingStart(False),startTimeFromZeroSpeed(-1),recordingTime(108),averageSpeed(48.1843),NaN|isZeroSpeedFromRecordingStart or isAppActive--></cmt></trkpt>
+<trkpt lat="37.5238833" lon="127.0157229">
+<ele>54.3122411</ele>
+<time>2021-03-18T01:40:18.815Z</time>
+<speed>17.0842</speed>
+<cmt><!--RidingState(E_RIDING_REC),AppState(Inactive),GPSValid(Valid),currentSpeed(61.5031),isZeroSpeedFromRecordingStart(False),startTimeFromZeroSpeed(-1),recordingTime(109),averageSpeed(48.3065),NaN|isZeroSpeedFromRecordingStart or isAppActive--></cmt></trkpt>
+<trkpt lat="37.5237600" lon="127.0158365">
+<ele>53.8269836</ele>
+<time>2021-03-18T01:40:19.814Z</time>
+<speed>16.3843</speed>
+<cmt><!--RidingState(E_RIDING_REC),AppState(Inactive),GPSValid(Valid),currentSpeed(58.9835),isZeroSpeedFromRecordingStart(False),startTimeFromZeroSpeed(-1),recordingTime(110),averageSpeed(48.4035),NaN|isZeroSpeedFromRecordingStart or isAppActive--></cmt></trkpt>
+<trkpt lat="37.5236414" lon="127.0159414">
+<ele>53.7705993</ele>
+<time>2021-03-18T01:40:20.814Z</time>
+<speed>15.9954</speed>
+<cmt><!--RidingState(E_RIDING_REC),AppState(Inactive),GPSValid(Valid),currentSpeed(57.5834),isZeroSpeedFromRecordingStart(False),startTimeFromZeroSpeed(-1),recordingTime(111),averageSpeed(48.4862),NaN|isZeroSpeedFromRecordingStart or isAppActive--></cmt></trkpt>
+<trkpt lat="37.5235291" lon="127.0160424">
+<ele>53.5542751</ele>
+<time>2021-03-18T01:40:21.814Z</time>
+<speed>15.5759</speed>
+<cmt><!--RidingState(E_RIDING_REC),AppState(Inactive),GPSValid(Valid),currentSpeed(56.0732),isZeroSpeedFromRecordingStart(False),startTimeFromZeroSpeed(-1),recordingTime(112),averageSpeed(48.554),NaN|isZeroSpeedFromRecordingStart or isAppActive--></cmt></trkpt>
+<trkpt lat="37.5155238" lon="127.0155099">
+<ele>54.6986362</ele>
+<time>2021-03-18T01:41:23.813Z</time>
+<speed>25.8211</speed>
+<cmt><!--RidingState(E_RIDING_REC),AppState(Inactive),GPSValid(Valid),currentSpeed(92.956),isZeroSpeedFromRecordingStart(False),startTimeFromZeroSpeed(-1),recordingTime(113),averageSpeed(48.9469),NaN|isZeroSpeedFromRecordingStart or isAppActive--></cmt></trkpt>
+</trkseg>
+</trk>
+</gpx>
