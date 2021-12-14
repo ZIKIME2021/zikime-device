@@ -1,13 +1,20 @@
 from PySide2.QtCore import *
 from typing import Generator, List
+import platform
 
-import gpxpy
-import gpxpy.gpx
+if __debug__:
+    import gpxpy
+    import gpxpy.gpx
+else:
+    from serial import Serial
+    import RPi.GPIO as GPIO
+    import os, time
+    from decimal import *
 
 class GPSParser:
     def __init__(self, gpx_file = "app/res/settings/gpx_route1.gpx"):
         self.__positions : List[tuple] = []
-
+        
         gpx_file = open(gpx_file, 'r')
         gpx = gpxpy.parse(gpx_file)
 
@@ -16,6 +23,9 @@ class GPSParser:
                 for point in segment.points:
                     self.__positions.append((point.latitude, point.longitude))
         
+        if platform.machine() in ("armv7l", "armv6l"):
+            pass
+            
     def get_current_gps_generator(self):
         for pos in self.__positions:
             yield pos
