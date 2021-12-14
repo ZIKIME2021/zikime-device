@@ -57,7 +57,7 @@ ApplicationWindow {
                     Layout.fillWidth: true
                     Image {
                         anchors.fill: parent
-                        source: "./res/wifi.png"
+                        source: "../res/images/wifi.png"
                         fillMode: Image.PreserveAspectFit
                     }
                     MouseArea {
@@ -72,7 +72,7 @@ ApplicationWindow {
                     Layout.fillWidth: true
                     Image {
                         anchors.fill: parent
-                        source: "./res/regist.png"
+                        source: "../res/images/regist.png"
                         fillMode: Image.PreserveAspectFit
                     }
                     MouseArea {
@@ -89,7 +89,7 @@ ApplicationWindow {
                     Layout.fillWidth: true
                     Image {
                         anchors.fill: parent
-                        source: "./res/sos.png"
+                        source: "../res/images/sos.png"
                         fillMode: Image.PreserveAspectFit
                     }
                     MouseArea {
@@ -103,7 +103,7 @@ ApplicationWindow {
                     Layout.fillWidth: true
                     Image {
                         anchors.fill: parent
-                        source: "./res/settings.png"
+                        source: "../res/images/settings.png"
                         fillMode: Image.PreserveAspectFit
                     }
                     MouseArea {
@@ -191,7 +191,7 @@ ApplicationWindow {
     function getDeviceInfo(serial)
     {
         var xhr = new XMLHttpRequest;
-        xhr.open("GET", "http://localhost:9999/device/" + serial)
+        xhr.open("GET", API_SERVER_URL + "/device/" + serial)
         xhr.onreadystatechange = function() {
             if (xhr.readyState === XMLHttpRequest.DONE) {
                 var json = xhr.responseText
@@ -210,7 +210,7 @@ ApplicationWindow {
     function recvState(stateId)
     {
         var xhr = new XMLHttpRequest;
-        xhr.open("GET", "http://www.zikime.com:9999/state/" + stateId, true)
+        xhr.open("GET", API_SERVER_URL + "/state/" + stateId, true)
         xhr.onreadystatechange = function() {
             if (xhr.readyState === XMLHttpRequest.DONE) {
                 var json = xhr.responseText
@@ -232,7 +232,7 @@ ApplicationWindow {
     function updateState(stateId)
     {
         var xhr = new XMLHttpRequest;
-        xhr.open("PUT", "http://www.zikime.com:9999/state/" + idWindow.stateId, true)
+        xhr.open("PUT", API_SERVER_URL + "/state/" + idWindow.stateId, true)
         xhr.onreadystatechange = function() {
             if (xhr.readyState === XMLHttpRequest.DONE) {
                 var json = xhr.responseText

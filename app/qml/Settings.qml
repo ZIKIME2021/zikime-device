@@ -45,7 +45,7 @@ Item {
                             Layout.topMargin: 10
                             Layout.preferredHeight: 24
                             Layout.preferredWidth: 24
-                            source: "./res/settings.png"
+                            source: "../res/images/settings.png"
                         }
                         Text {
                             id: idSoundMode
@@ -74,7 +74,7 @@ Item {
                         anchors.left: parent.lef
                         Image {
                             anchors.fill: parent
-                            source: "./res/arrow_back.png"
+                            source: "../res/images/arrow_back.png"
                             fillMode: Image.PreserveAspectFit
                         }
                         MouseArea {

@@ -39,7 +39,7 @@ Item {
                     height: 24
                     Image {
                         anchors.fill: parent
-                        source: "./res/wifi.png"
+                        source: "../res/images/wifi.png"
                     }
                 }
                 Text {
@@ -92,7 +92,7 @@ Item {
                             Layout.topMargin: 10
                             Layout.preferredHeight: 24
                             Layout.preferredWidth: 24
-                            source: "./res/wifi.png"
+                            source: "../res/images/wifi.png"
                         }
                         Text {
                             Layout.alignment: Qt.AlignHCenter
@@ -121,7 +121,7 @@ Item {
                         anchors.left: parent.lef
                         Image {
                             anchors.fill: parent
-                            source: "./res/arrow_back.png"
+                            source: "../res/images/arrow_back.png"
                             fillMode: Image.PreserveAspectFit
                         }
                         MouseArea {

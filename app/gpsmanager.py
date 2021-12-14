@@ -5,7 +5,7 @@ import gpxpy
 import gpxpy.gpx
 
 class GPSParser:
-    def __init__(self, gpx_file = "gpx_route.gpx"):
+    def __init__(self, gpx_file = "app/res/settings/gpx_route1.gpx"):
         self.__positions : List[tuple] = []
 
         gpx_file = open(gpx_file, 'r')
