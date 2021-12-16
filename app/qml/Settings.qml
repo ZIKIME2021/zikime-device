@@ -5,12 +5,10 @@ import QtQuick.Controls.Material 2.12
 import QtQml.Models 2.15
 
 import com.zikime.settings 1.0
-import com.zikime.const 1.0
 
 Item {
     id: idSettings
     property Settings settings: Settings{}
-    property Const notify: Const{}
 
     RowLayout {
         anchors.fill: parent

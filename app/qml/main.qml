@@ -6,6 +6,7 @@ import QtQuick.Window 2.12
 
 import com.zikime.updatemanager 1.0
 import com.zikime.gpsmanager 1.0
+import com.zikime.registmanager 1.0
 
 ApplicationWindow {
     id: idWindow
@@ -16,6 +17,10 @@ ApplicationWindow {
 
     Material.theme: Material.Light
     Material.accent: Material.Blue
+    
+    property UpdateManager updateManager: UpdateManager{}
+    property GPSManager gpsManager: GPSManager{}
+    property RegistManager registManager: RegistManager{}
 
     property int deviceId: 0
     property string serial: ''
@@ -23,16 +28,16 @@ ApplicationWindow {
     property string cameraInfo: ''
     property int stateId: 0
 
-    property string latitude: ''
-    property string longitude: ''
-    property string altitude: ''
-    property bool power: false
-    property string mode: ''
-    property string ipAddress: ''
+    property string latitude: '0.0'
+    property string longitude: '0.0'
+    property string altitude: '0.0'
+    property bool power: true
+    property string mode: "NORMAL"
+    property string ipAddress: "127.0.0.1"
     property string updateDate: ''
-    
-    property UpdateManager updateManager: UpdateManager{}
-    property GPSManager gpsManager: GPSManager{}
+
+    property bool registered: false
+    property int register_number: 0
 
     property double current_latitude: 0.0
     property double current_longitude: 0.0
@@ -53,8 +58,11 @@ ApplicationWindow {
                 anchors.fill: parent
                 Item {
                     id: idWifi
+                    visible: idWindow.registered ? true : false
+
                     Layout.preferredHeight: 200
                     Layout.fillWidth: true
+
                     Image {
                         anchors.fill: parent
                         source: "../res/images/wifi.png"
@@ -63,11 +71,42 @@ ApplicationWindow {
                     MouseArea {
                         anchors.fill: parent
                         onClicked: pushView("WifiList.qml")
-                        //onClicked: idWindow.get_device_info("10000000a6f28908")
                     }
                 }
                 Item {
-                    id: idVideoList
+                    id: idSos
+                    visible: idWindow.registered ? true : false
+
+                    Layout.preferredHeight: 200
+                    Layout.fillWidth: true
+                    Image {
+                        anchors.fill: parent
+                        source: "../res/images/sos.png"
+                        fillMode: Image.PreserveAspectFit
+                    }
+                    Item {
+                        Rectangle{
+                            anchors.fill: parent
+                            opacity: 0.4
+                            color: "black"
+                        }
+                        BusyIndicator {
+                            id: idSosIndicator
+                            running: false
+                        }
+                    }
+                    MouseArea {
+                        anchors.fill: parent
+                        onClicked: {
+                            idWindow.mode = "EMERGENCY"
+                            idWindow.updateManager.send_sos()
+                        }
+                    }
+                }
+                Item {
+                    id: idRegist
+                    visible: !idWindow.registered ? true : false
+
                     Layout.preferredHeight: 200
                     Layout.fillWidth: true
                     Image {
@@ -78,27 +117,17 @@ ApplicationWindow {
                     MouseArea {
                         anchors.fill: parent
                         onClicked: {
-                            idPopup.open()
-                            idWindow.regist()
+                            //idWindow.register_number = registManager.register_device()
+                            idWindow.registManager.register_device()
+                            //idPopup.open()
+                            //idWindow.registered = true
                         }
                     }
                 }
                 Item {
-                    id: idSos
-                    Layout.preferredHeight: 200
-                    Layout.fillWidth: true
-                    Image {
-                        anchors.fill: parent
-                        source: "../res/images/sos.png"
-                        fillMode: Image.PreserveAspectFit
-                    }
-                    MouseArea {
-                        anchors.fill: parent
-                        onClicked: idWindow.updateManager.send_sos()
-                    }
-                }
-                Item {
                     id: idSettings
+                    visible: idWindow.registered ? true : false
+
                     Layout.preferredHeight: 200
                     Layout.fillWidth: true
                     Image {
@@ -139,7 +168,7 @@ ApplicationWindow {
             Text {
                 id: idRegistText
                 Layout.alignment: Qt.AlignHCenter
-                text: ""
+                text: idWindow.register_number.toString()
                 font.family: "Arial"
                 font.pixelSize: 20
                 font.bold: true
@@ -248,17 +277,54 @@ ApplicationWindow {
             "altitude": "42.1326",
             "power": true,
             "ip_address": "192.168.0.1",
-            "mode": "NORMAL"
+            "mode": idWindow.mode
         };
 
         xhr.setRequestHeader("Content-Type", "application/json");
         xhr.send(JSON.stringify(body_data))
     }
 
+    function register_device() {
+        console.log(idWindow.registManager.get_serial())
+        console.log(serial)
+        var device_id;
+        var xhr = new XMLHttpRequest;
+        xhr.open("GET", API_SERVER_URL + "/device/" + serial, false)
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === XMLHttpRequest.DONE) {
+                var json = xhr.responseText
+                var jsonObject = JSON.parse(json)
+                device_id = jsonObject["id"]
+            }
+        }
+        xhr.send()
+
+        idWindow.register_number = idWindow.registManager.gen_register_number()
+        // while(true) {
+        //     idWindow.register_number = idWindow.registManager.gen_register_number()
+
+        //     var jsonObject;
+        //     xhr.open("GET", API_SERVER_URL + "/device/" + serial, false)
+        //     xhr.onreadystatechange = function() {
+        //         if (xhr.readyState === XMLHttpRequest.DONE) {
+        //             var json = xhr.responseText
+        //             jsonObject = JSON.parse(json)
+        //             device_id = jsonObject["id"]
+        //         }
+        //     }
+        //     xhr.send()
+            
+        //     if (device_id === null):
+        //         break
+        // }
+
+        console.log(idWindow.register_number)
+    }
+
     Timer {
         id: idTimer
         interval: 1000
-        running: true
+        running: false
         repeat: true
         onTriggered: {
             gpsManager.update_gps()
