@@ -22,7 +22,25 @@ class RegistManager(QObject):
         if platform.system() == "Windows":
             return "10000000a6f28908"
         elif platform.system() == "Linux":
-            return "10000000a6f28908"
+            f = open('/proc/cpuinfo', 'r')
+
+            lines = f.readlines()
+            for line in lines:
+                if line == '\n':
+                    continue
+
+                k, v = line.split(':')
+                k = k.replace(' ', '')
+                k = k.replace('\t', '')
+                k = k.replace('\n', '')
+
+                v = v.replace(' ', '')
+                v = v.replace('\t', '')
+                v = v.replace('\n', '')
+
+                if k == "Serial":
+                    f.close()
+                    return v
 
     @Slot()
     def register_device(self):

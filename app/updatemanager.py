@@ -22,7 +22,28 @@ class UpdateManager(QObject):
         if platform.system() == "Windows":
             self.__serial = "10000000a6f28908"
         elif platform.system() == "Linux":
-            pass
+            f = open('/proc/cpuinfo', 'r')
+
+            lines = f.readlines()
+            for line in lines:
+                if line == '\n':
+                    continue
+
+                k, v = line.split(':')
+                k = k.replace(' ', '')
+                k = k.replace('\t', '')
+                k = k.replace('\n', '')
+
+                v = v.replace(' ', '')
+                v = v.replace('\t', '')
+                v = v.replace('\n', '')
+
+                if k == "Serial":
+                    self.__serial = v
+                    break
+
+            f.close()
+
         
         response = request("GET", f"http://localhost:9999/device/{self.__serial}")
         json_msg = response.json()
