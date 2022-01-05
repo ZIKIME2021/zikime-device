@@ -1,6 +1,40 @@
 
-# Created by https://www.toptal.com/developers/gitignore/api/python,visualstudiocode,qt,qtcreator
-# Edit at https://www.toptal.com/developers/gitignore?templates=python,visualstudiocode,qt,qtcreator
+# Created by https://www.toptal.com/developers/gitignore/api/python,c++,qt,qtcreator
+# Edit at https://www.toptal.com/developers/gitignore?templates=python,c++,qt,qtcreator
+
+### C++ ###
+# Prerequisites
+*.d
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Fortran module files
+*.mod
+*.smod
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
 
 ### Python ###
 # Byte-compiled / optimized / DLL files
@@ -9,7 +43,6 @@ __pycache__/
 *$py.class
 
 # C extensions
-*.so
 
 # Distribution / packaging
 .Python
@@ -144,15 +177,7 @@ cython_debug/
 
 ### Qt ###
 # C++ objects and libs
-*.slo
-*.lo
-*.o
-*.a
-*.la
-*.lai
 *.so.*
-*.dll
-*.dylib
 
 # Qt-es
 object_script.*.Release
@@ -229,24 +254,4 @@ compile_commands.json
 *.cflags
 
 
-### VisualStudioCode ###
-.vscode
-.vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
-*.code-workspace
-
-# Local History for Visual Studio Code
-.history/
-
-### VisualStudioCode Patch ###
-# Ignore all local history of files
-.history
-.ionide
-
-# Support for Project snippet scope
-!.vscode/*.code-snippets
-
-# End of https://www.toptal.com/developers/gitignore/api/python,visualstudiocode,qt,qtcreator
+# End of https://www.toptal.com/developers/gitignore/api/python,c++,qt,qtcreator
