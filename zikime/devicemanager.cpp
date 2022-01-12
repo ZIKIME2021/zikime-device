@@ -21,19 +21,44 @@ DeviceManager::DeviceManager(QObject *parent) : QObject(parent)
     _simulationData = stream.readAll().split("\n");
 }
 
-QString DeviceManager::GetCurrentPosition()
+QString DeviceManager::getCurrentPosition()
 {
+#ifdef Q_OS_WIN
     return _simulationData.takeFirst();
+#else
+
+#endif
 }
 
 QString DeviceManager::getSerial()
 {
-    QString serial;
 #ifdef Q_OS_WIN
     serial = "000000004edc635b";
+#else
+
+#endif
+
+    return serial;
+}
+
+QString DeviceManager::getCameraInfo()
+{
+#ifdef Q_OS_WIN
+    cameraInfo = "Pi-Camera";
+#else
+
+#endif
+
+    return cameraInfo;
+}
+
+QString DeviceManager::getGPSInfo()
+{
+#ifdef Q_OS_WIN
+    gpsInfo = "L80-M39";
 #else
     serial = "";
 #endif
 
-    return serial;
+    return gpsInfo;
 }

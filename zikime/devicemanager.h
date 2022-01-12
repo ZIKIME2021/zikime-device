@@ -12,12 +12,16 @@ class DeviceManager : public QObject
     Q_OBJECT
 public:
     explicit DeviceManager(QObject *parent = nullptr);
-    QString GetCurrentPosition();
+    Q_INVOKABLE QString getCurrentPosition();
     Q_INVOKABLE QString getSerial();
+    Q_INVOKABLE QString getCameraInfo();
+    Q_INVOKABLE QString getGPSInfo();
 
 private:
     QStringList _simulationData;
     QString serial;
+    QString cameraInfo;
+    QString gpsInfo;
 
 signals:
 

@@ -8,7 +8,8 @@ CONFIG += c++11
 
 SOURCES += \
         devicemanager.cpp \
-        main.cpp
+        main.cpp \
+        qmlmqttclient.cpp
 
 RESOURCES += qml.qrc \
     resources.qrc
@@ -30,15 +31,16 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 HEADERS += \
     constants.h \
-    devicemanager.h
+    devicemanager.h \
+    qmlmqttclient.h
 
-LIBS += -L$$PWD/mosquitto/x64/lib -lmosquitto
-LIBS += -L$$PWD/mosquitto/x64/lib -lmosquittopp
+#LIBS += -L$$PWD/mosquitto/x64/lib -lmosquitto
+#LIBS += -L$$PWD/mosquitto/x64/lib -lmosquittopp
 
 LIBS += -L$$PWD/qtmqtt/build/lib -llibQt5Mqtt
 
-INCLUDEPATH += $$PWD/mosquitto/x64/includes
+#INCLUDEPATH += $$PWD/mosquitto/x64/includes
 INCLUDEPATH += $$PWD/qtmqtt/src/mqtt/include
 
-DEPENDPATH += $$PWD/mosquitto/x64/includes
-INCLUDEPATH += $$PWD/qtmqtt/src/mqtt/include
+#DEPENDPATH += $$PWD/mosquitto/x64/includes
+DEPENDPATH += $$PWD/qtmqtt/src/mqtt/include
