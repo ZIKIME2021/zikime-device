@@ -5,8 +5,8 @@ QT_VER=5.12
 export QT_VER
 QT_VERSION_TAG=5128
 export QT_VERSION_TAG
-QT_INSTALL_DOCS=C:/Qt/Docs/Qt-5.15.2
+QT_INSTALL_DOCS=/usr/share/qt5/doc
 export QT_INSTALL_DOCS
-BUILDDIR=D:/gitclone/zikime-device/zikime/qtmqtt/src/mqtt
+BUILDDIR=/home/pi/qtmqtt/src/mqtt
 export BUILDDIR
-exec 'C:\Qt\5.15.2\mingw81_64\bin\qdoc.exe' "$@"
+exec /usr/lib/qt5/bin/qdoc "$@"
