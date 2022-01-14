@@ -1,5 +1,6 @@
 Qt_5_PRIVATE_API {
     qt_private_api_tag*;
+<<<<<<< HEAD
     @FILE:/home/pi/qtmqtt/src/mqtt/qmqttclient_p.h@
     @FILE:/home/pi/qtmqtt/src/mqtt/qmqttconnection_p.h@
     @FILE:/home/pi/qtmqtt/src/mqtt/qmqttconnectionproperties_p.h@
@@ -7,6 +8,15 @@ Qt_5_PRIVATE_API {
     @FILE:/home/pi/qtmqtt/src/mqtt/qmqttmessage_p.h@
     @FILE:/home/pi/qtmqtt/src/mqtt/qmqttpublishproperties_p.h@
     @FILE:/home/pi/qtmqtt/src/mqtt/qmqttsubscription_p.h@
+=======
+    @FILE:/mnt/d/gitclone/zikime-device/zikime/qtmqtt/src/mqtt/qmqttclient_p.h@
+    @FILE:/mnt/d/gitclone/zikime-device/zikime/qtmqtt/src/mqtt/qmqttconnection_p.h@
+    @FILE:/mnt/d/gitclone/zikime-device/zikime/qtmqtt/src/mqtt/qmqttconnectionproperties_p.h@
+    @FILE:/mnt/d/gitclone/zikime-device/zikime/qtmqtt/src/mqtt/qmqttcontrolpacket_p.h@
+    @FILE:/mnt/d/gitclone/zikime-device/zikime/qtmqtt/src/mqtt/qmqttmessage_p.h@
+    @FILE:/mnt/d/gitclone/zikime-device/zikime/qtmqtt/src/mqtt/qmqttpublishproperties_p.h@
+    @FILE:/mnt/d/gitclone/zikime-device/zikime/qtmqtt/src/mqtt/qmqttsubscription_p.h@
+>>>>>>> 26df9891d7ee4d57ff638aa2eaa489a2b603f219
 };
 Qt_5 { *; };
 Qt_5.0 {} Qt_5;
@@ -21,7 +31,11 @@ Qt_5.8 {} Qt_5.7;
 Qt_5.9 {} Qt_5.8;
 Qt_5.10 {} Qt_5.9;
 Qt_5.11 {} Qt_5.10;
+<<<<<<< HEAD
 Qt_5.12 {} Qt_5.11;
 Qt_5.13 {} Qt_5.12;
 Qt_5.14 {} Qt_5.13;
 Qt_5.15 { qt_version_tag; } Qt_5.14;
+=======
+Qt_5.12 { qt_version_tag; } Qt_5.11;
+>>>>>>> 26df9891d7ee4d57ff638aa2eaa489a2b603f219
