@@ -34,6 +34,7 @@ QString DeviceManager::getSerial()
 {
 #ifdef Q_OS_WIN
     serial = "000000004edc635b";
+    //serial = "000000004edcAAAA";
 #else
 
 #endif

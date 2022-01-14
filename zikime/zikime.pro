@@ -34,13 +34,8 @@ HEADERS += \
     devicemanager.h \
     qmlmqttclient.h
 
-#LIBS += -L$$PWD/mosquitto/x64/lib -lmosquitto
-#LIBS += -L$$PWD/mosquitto/x64/lib -lmosquittopp
-
-LIBS += -L$$PWD/qtmqtt/build/lib -llibQt5Mqtt
-
-#INCLUDEPATH += $$PWD/mosquitto/x64/includes
-INCLUDEPATH += $$PWD/qtmqtt/src/mqtt/include
-
-#DEPENDPATH += $$PWD/mosquitto/x64/includes
-DEPENDPATH += $$PWD/qtmqtt/src/mqtt/include
+win32 {
+    LIBS += -L$$PWD/qtmqtt/lib -llibQt5Mqtt
+    INCLUDEPATH += $$PWD/qtmqtt/include
+    DEPENDPATH += $$PWD/qtmqtt/include
+}
