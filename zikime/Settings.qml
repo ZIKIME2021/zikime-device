@@ -4,11 +4,8 @@ import QtQuick.Layouts 1.12
 import QtQuick.Controls.Material 2.12
 import QtQml.Models 2.15
 
-import com.zikime.settings 1.0
-
 Item {
     id: idSettings
-    property Settings settings: Settings{}
 
     RowLayout {
         anchors.fill: parent
@@ -43,7 +40,7 @@ Item {
                             Layout.topMargin: 10
                             Layout.preferredHeight: 24
                             Layout.preferredWidth: 24
-                            source: "../res/images/settings.png"
+                            source: "/images/settings.png"
                         }
                         Text {
                             id: idSoundMode
@@ -72,7 +69,7 @@ Item {
                         anchors.left: parent.lef
                         Image {
                             anchors.fill: parent
-                            source: "../res/images/arrow_back.png"
+                            source: "/images/arrow_back.png"
                             fillMode: Image.PreserveAspectFit
                         }
                         MouseArea {

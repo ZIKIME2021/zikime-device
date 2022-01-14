@@ -4,9 +4,7 @@ import QtQuick.Controls.Material 2.12
 import QtQuick.Layouts 1.15
 import QtQuick.Window 2.12
 
-import com.zikime.updatemanager 1.0
-import com.zikime.gpsmanager 1.0
-import com.zikime.registmanager 1.0
+import MqttClient 1.0
 
 ApplicationWindow {
     id: idWindow
@@ -17,16 +15,11 @@ ApplicationWindow {
 
     Material.theme: Material.Light
     Material.accent: Material.Blue
-    
-    property UpdateManager updateManager: UpdateManager{}
-    property GPSManager gpsManager: GPSManager{}
-    property RegistManager registManager: RegistManager{}
 
     property int deviceId: 0
     property string serial: ''
     property string gpsInfo: ''
     property string cameraInfo: ''
-    property int stateId: 0
 
     property string latitude: '0.0'
     property string longitude: '0.0'
@@ -37,11 +30,29 @@ ApplicationWindow {
     property string updateDate: ''
 
     property bool registered: false
-    property int register_number: 0
+    property bool validSerial: true
 
-    property double current_latitude: 0.0
-    property double current_longitude: 0.0
-    
+    property double currentLatitude: 0.0
+    property double currentLongitude: 0.0
+
+    property int registerNumber: 0
+    property var emailList: []
+
+    Component.onCompleted: {
+        serial = DeviceManager.getSerial()
+        gpsInfo = DeviceManager.getGPSInfo()
+        cameraInfo = DeviceManager.getCameraInfo()
+        registered = isRegistered(serial)
+        console.log("serial: " + idWindow.serial)
+    }
+
+    Component.onDestruction: {
+        console.log("Disconnected!!")
+        console.log(idMqttClient.hostname)
+        idMqttClient.publish("device/connect", "Disconnect")
+        idMqttClient.disconnectFromHost();
+    }
+
     StackView {
         id: idStackView
         anchors.fill: parent
@@ -65,7 +76,7 @@ ApplicationWindow {
 
                     Image {
                         anchors.fill: parent
-                        source: "../res/images/wifi.png"
+                        source: "images/wifi.png"
                         fillMode: Image.PreserveAspectFit
                     }
                     MouseArea {
@@ -81,7 +92,7 @@ ApplicationWindow {
                     Layout.fillWidth: true
                     Image {
                         anchors.fill: parent
-                        source: "../res/images/sos.png"
+                        source: "images/sos.png"
                         fillMode: Image.PreserveAspectFit
                     }
                     Item {
@@ -99,7 +110,8 @@ ApplicationWindow {
                         anchors.fill: parent
                         onClicked: {
                             idWindow.mode = "EMERGENCY"
-                            idWindow.updateManager.send_sos()
+                            idSosPopup.open()
+                            //DeviceManager.sendSOS()
                         }
                     }
                 }
@@ -111,16 +123,16 @@ ApplicationWindow {
                     Layout.fillWidth: true
                     Image {
                         anchors.fill: parent
-                        source: "../res/images/regist.png"
+                        source: "images/regist.png"
                         fillMode: Image.PreserveAspectFit
                     }
                     MouseArea {
                         anchors.fill: parent
                         onClicked: {
-                            //idWindow.register_number = registManager.register_device()
-                            idWindow.registManager.register_device()
-                            //idPopup.open()
-                            //idWindow.registered = true
+                            idWindow.isValidSerial(idWindow.serial)
+                            idWindow.getRegisterNumber(idWindow.serial)
+                            //idMqttClient.publish("device/register", "")
+                            idRegisterPopup.open()
                         }
                     }
                 }
@@ -132,7 +144,7 @@ ApplicationWindow {
                     Layout.fillWidth: true
                     Image {
                         anchors.fill: parent
-                        source: "../res/images/settings.png"
+                        source: "images/settings.png"
                         fillMode: Image.PreserveAspectFit
                     }
                     MouseArea {
@@ -150,7 +162,7 @@ ApplicationWindow {
         anchors.topMargin: 50
         anchors.bottomMargin: 50
         Popup {
-            id: idPopup
+            id: idRegisterPopup
             width: parent.width
             height: parent.height
             modal: true
@@ -158,28 +170,61 @@ ApplicationWindow {
 
             ColumnLayout {
                 anchors.fill: parent
-            Text {
-                Layout.alignment: Qt.AlignHCenter
-                text: "Regist Number"
-                font.family: "Arial"
-                font.pixelSize: 24
-                font.bold: true
-            }
-            Text {
-                id: idRegistText
-                Layout.alignment: Qt.AlignHCenter
-                text: idWindow.register_number.toString()
-                font.family: "Arial"
-                font.pixelSize: 20
-                font.bold: true
-            }
+                Text {
+                    Layout.alignment: Qt.AlignHCenter
+                    text: idWindow.validSerial ? "Regist Number" : "유효하지 않는 기기입니다."
+                    font.family: "Arial"
+                    font.pixelSize: 24
+                    font.bold: true
+                }
+                Text {
+                    id: idRegisterText
+                    Layout.alignment: Qt.AlignHCenter
+                    text: idWindow.registerNumber
+                    font.family: "Arial"
+                    font.pixelSize: 20
+                    font.bold: true
+                }
             }
             Button {
                 anchors.left: parent.left
                 anchors.bottom: parent.bottom
                 text: "close"
                 onClicked: {
-                    idPopup.close()
+                    idRegisterPopup.close()
+                }
+            }
+        }
+    }
+    Item {
+        anchors.fill: parent
+        anchors.leftMargin: 50
+        anchors.rightMargin: 50
+        anchors.topMargin: 50
+        anchors.bottomMargin: 50
+        Popup {
+            id: idSosPopup
+            width: parent.width
+            height: parent.height
+            modal: true
+            focus: true
+
+            ColumnLayout {
+                anchors.fill: parent
+                Text {
+                    Layout.alignment: Qt.AlignHCenter
+                    text: "SOS 요청 중입니다."
+                    font.family: "Arial"
+                    font.pixelSize: 24
+                    font.bold: true
+                }
+            }
+            Button {
+                //anchors.left: parent.left
+                anchors.bottom: parent.bottom
+                text: "close"
+                onClicked: {
+                    idSosPopup.close()
                 }
             }
         }
@@ -216,123 +261,131 @@ ApplicationWindow {
             }
         }
     }
-    
-    function getDeviceInfo(serial)
+
+    function isRegistered(serial)
     {
         var xhr = new XMLHttpRequest;
-        xhr.open("GET", API_SERVER_URL + "/device/" + serial)
-        xhr.onreadystatechange = function() {
-            if (xhr.readyState === XMLHttpRequest.DONE) {
-                var json = xhr.responseText
-
-                var jsonObject = JSON.parse(json)
-                idWindow.deviceId = jsonObject["id"]
-                idWindow.serial = jsonObject["serial"]
-                idWindow.gpsInfo = jsonObject["gps_info"]
-                idWindow.cameraInfo = jsonObject["camera_info"]
-                idWindow.stateId = jsonObject["state_id"]
-            }
-        }
-        xhr.send()
-    }
-
-    function recvState(stateId)
-    {
-        var xhr = new XMLHttpRequest;
-        xhr.open("GET", API_SERVER_URL + "/state/" + stateId, true)
-        xhr.onreadystatechange = function() {
-            if (xhr.readyState === XMLHttpRequest.DONE) {
-                var json = xhr.responseText
-
-                var jsonObject = JSON.parse(json)
-
-                idWindow.latitude = jsonObject["latitude"]
-                idWindow.longitude = jsonObject["longitude"]
-                idWindow.altitude = jsonObject["altitude"]
-                idWindow.power = jsonObject["power"]
-                idWindow.mode = jsonObject["mode"]
-                idWindow.ipAddress = jsonObject["ip_address"]
-                idWindow.updateDate = jsonObject["update_date"]
-            }
-        }
-        xhr.send()
-    }
-
-    function updateState(stateId)
-    {
-        var xhr = new XMLHttpRequest;
-        xhr.open("PUT", API_SERVER_URL + "/state/" + idWindow.stateId, true)
+        xhr.open("GET", API_SERVER + "/device/" + serial, false)
         xhr.onreadystatechange = function() {
             if (xhr.readyState === XMLHttpRequest.DONE) {
                 var json = xhr.responseText
                 var jsonObject = JSON.parse(json)
 
-                console.log(json)
-            }
-        }
-
-        var body_data = {
-            "latitude": idWindow.current_latitude.toString(),
-            "longitude": idWindow.current_longitude.toString(),
-            "altitude": "42.1326",
-            "power": true,
-            "ip_address": "192.168.0.1",
-            "mode": idWindow.mode
-        };
-
-        xhr.setRequestHeader("Content-Type", "application/json");
-        xhr.send(JSON.stringify(body_data))
-    }
-
-    function register_device() {
-        console.log(idWindow.registManager.get_serial())
-        console.log(serial)
-        var device_id;
-        var xhr = new XMLHttpRequest;
-        xhr.open("GET", API_SERVER_URL + "/device/" + serial, false)
-        xhr.onreadystatechange = function() {
-            if (xhr.readyState === XMLHttpRequest.DONE) {
-                var json = xhr.responseText
-                var jsonObject = JSON.parse(json)
-                device_id = jsonObject["id"]
+                if(jsonObject)
+                {
+                    idWindow.deviceId = jsonObject["id"]
+                    idWindow.gpsInfo = jsonObject["gps_info"]
+                    idWindow.cameraInfo = jsonObject["camera_info"]
+                }
             }
         }
         xhr.send()
 
-        idWindow.register_number = idWindow.registManager.gen_register_number()
-        // while(true) {
-        //     idWindow.register_number = idWindow.registManager.gen_register_number()
+        if(deviceId)
+            return true;
 
-        //     var jsonObject;
-        //     xhr.open("GET", API_SERVER_URL + "/device/" + serial, false)
-        //     xhr.onreadystatechange = function() {
-        //         if (xhr.readyState === XMLHttpRequest.DONE) {
-        //             var json = xhr.responseText
-        //             jsonObject = JSON.parse(json)
-        //             device_id = jsonObject["id"]
-        //         }
-        //     }
-        //     xhr.send()
-            
-        //     if (device_id === null):
-        //         break
-        // }
+        return false;
+    }
 
-        console.log(idWindow.register_number)
+    function isValidSerial(serial)
+    {
+        var create_at;
+        var expire_at;
+
+        var xhr = new XMLHttpRequest;
+        xhr.open("GET", API_SERVER + "/serial/" + serial, false)
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === XMLHttpRequest.DONE) {
+                var json = xhr.responseText
+                var jsonObject = JSON.parse(json)
+
+                if(jsonObject)
+                {
+                    create_at = new Date(jsonObject["create_at"])
+                    expire_at = new Date(jsonObject["expire_at"])
+
+                    if(expire_at - Date.now() < 0)
+                        idWindow.validSerial = false
+                }
+                else
+                    idWindow.validSerial = false;
+            }
+        }
+
+        xhr.send()
+    }
+
+    MqttClient {
+        id: idMqttClient
+        clientId: "zikime-client"
+        hostname: MQTT_SERVER
+        port: MQTT_PORT
+    }
+
+    Connections {
+        target: idMqttClient
+        function onStateChanged(state)
+        {
+            console.log(state)
+            if(state === MqttClient.Connected)
+            {
+                console.log("Connected!!")
+                console.log(idMqttClient.hostname)
+                idMqttClient.publish("device/connect", "Connect")
+            }
+        }
+    }
+
+    function getRegisterNumber(serial)
+    {
+        var xhr = new XMLHttpRequest;
+        var params = "?serial=" + serial + "&gps_info=" + idWindow.gpsInfo + "&camera_info=" + idWindow.cameraInfo;
+        xhr.open("GET", API_SERVER + "/device-management/key-generator" + params, false)
+
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === XMLHttpRequest.DONE) {
+                idWindow.registerNumber = Number(xhr.responseText)
+            }
+        }
+
+        xhr.send()
+    }
+
+    function getMasterEmail(serial)
+    {
+        var xhr = new XMLHttpRequest;
+        xhr.open("GET", WEB_SERVER + "/sos?device_id=" + idWindow.serial, false)
+
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === XMLHttpRequest.DONE) {
+                idWindow.emailList = xhr.responseText
+            }
+        }
+
+        xhr.send()
     }
 
     Timer {
         id: idTimer
         interval: 1000
-        running: false
+        running: true
         repeat: true
         onTriggered: {
-            gpsManager.update_gps()
-            idWindow.current_latitude = gpsManager.latitude
-            idWindow.current_longitude = gpsManager.longitude
+            if(idMqttClient.state === MqttClient.Disconnected)
+            {
+                idMqttClient.connectToHost()
+                idTimer.running = false
+            }
+        }
+    }
 
-            idWindow.getDeviceInfo("10000000a6f28908")
-            idWindow.updateState(idWindow.deviceId)
+    Timer {
+        id: idSendState
+        interval: 1000
+        running: idWindow.registered
+        repeat: true
+        onTriggered: {
+
         }
     }
 }

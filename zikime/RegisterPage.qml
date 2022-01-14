@@ -17,7 +17,7 @@ Item {
             Layout.fillWidth: true
             Image {
                 anchors.fill: parent
-                source: "../res/images/regist.png"
+                source: "/images/regist.png"
                 fillMode: Image.PreserveAspectFit
             }
             MouseArea {

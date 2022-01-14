@@ -79,7 +79,7 @@ Item {
                     anchors.left: parent.lef
                     Image {
                         anchors.fill: parent
-                        source: "../res/images/arrow_back.png"
+                        source: "/images/arrow_back.png"
                         fillMode: Image.PreserveAspectFit
                     }
                     MouseArea {
@@ -103,7 +103,7 @@ Item {
                         id: idPlayingVideo
                         width: parent.width
                         //height: parent.height
-                        source: "../res/images/road.jpg"
+                        source: "/images/road.jpg"
                         fillMode: Image.PreserveAspectFit
                     }
                 }
@@ -120,7 +120,7 @@ Item {
                     anchors.horizontalCenter: idPlayBar.horizontalCenter
                     Image {
                         anchors.fill: parent
-                        source: "../res/images/play2.png"
+                        source: "/images/play2.png"
                         fillMode: Image.PreserveAspectFit
                     }
                 }
