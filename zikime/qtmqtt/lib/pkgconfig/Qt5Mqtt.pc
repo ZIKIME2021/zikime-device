@@ -1,13 +1,13 @@
-prefix=C:/Qt/5.15.2/mingw81_64
+prefix=/usr
 exec_prefix=${prefix}
-libdir=${prefix}/lib
-includedir=${prefix}/include
+libdir=${prefix}/lib/arm-linux-gnueabihf
+includedir=${prefix}/include/arm-linux-gnueabihf/qt5
 
 
 Name: Qt5 Mqtt
 Description: Qt Mqtt module
 Version: 5.12.8
-Libs: -L${libdir} -lQt5Mqtt 
+Libs: -lQt5Mqtt 
 Cflags: -DQT_MQTT_LIB -I${includedir}/QtMqtt -I${includedir}
 Requires: Qt5Core Qt5Network
 

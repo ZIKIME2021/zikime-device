@@ -2,7 +2,19 @@ if (CMAKE_VERSION VERSION_LESS 3.1.0)
     message(FATAL_ERROR "Qt 5 Mqtt module requires at least CMake version 3.1.0")
 endif()
 
-get_filename_component(_qt5Mqtt_install_prefix "${CMAKE_CURRENT_LIST_DIR}/../../../" ABSOLUTE)
+get_filename_component(_IMPORT_PREFIX "${CMAKE_CURRENT_LIST_FILE}" PATH)
+# Use original install prefix when loaded through a
+# cross-prefix symbolic link such as /lib -> /usr/lib.
+get_filename_component(_realCurr "${_IMPORT_PREFIX}" REALPATH)
+get_filename_component(_realOrig "/usr/lib/arm-linux-gnueabihf/cmake/Qt5Mqtt" REALPATH)
+if(_realCurr STREQUAL _realOrig)
+    get_filename_component(_qt5Mqtt_install_prefix "/usr/lib/arm-linux-gnueabihf/../../" ABSOLUTE)
+else()
+    get_filename_component(_qt5Mqtt_install_prefix "${CMAKE_CURRENT_LIST_DIR}/../../../../" ABSOLUTE)
+endif()
+unset(_realOrig)
+unset(_realCurr)
+unset(_IMPORT_PREFIX)
 
 # For backwards compatibility only. Use Qt5Mqtt_VERSION instead.
 set(Qt5Mqtt_VERSION_STRING 5.12.8)
@@ -28,7 +40,7 @@ macro(_populate_Mqtt_target_properties Configuration LIB_LOCATION IMPLIB_LOCATIO
       IsDebugAndRelease)
     set_property(TARGET Qt5::Mqtt APPEND PROPERTY IMPORTED_CONFIGURATIONS ${Configuration})
 
-    set(imported_location "${_qt5Mqtt_install_prefix}/bin/${LIB_LOCATION}")
+    set(imported_location "${_qt5Mqtt_install_prefix}/lib/arm-linux-gnueabihf/${LIB_LOCATION}")
     _qt5_Mqtt_check_file_exists(${imported_location})
     set(_deps
         ${_Qt5Mqtt_LIB_DEPENDENCIES}
@@ -38,6 +50,7 @@ macro(_populate_Mqtt_target_properties Configuration LIB_LOCATION IMPLIB_LOCATIO
 
     set_target_properties(Qt5::Mqtt PROPERTIES
         "IMPORTED_LOCATION_${Configuration}" ${imported_location}
+        "IMPORTED_SONAME_${Configuration}" "libQt5Mqtt.so.5"
         # For backward compatibility with CMake < 2.8.12
         "IMPORTED_LINK_INTERFACE_LIBRARIES_${Configuration}" "${_deps};${_static_deps}"
     )
@@ -46,21 +59,14 @@ macro(_populate_Mqtt_target_properties Configuration LIB_LOCATION IMPLIB_LOCATIO
     )
 
 
-    set(imported_implib "${_qt5Mqtt_install_prefix}/lib/${IMPLIB_LOCATION}")
-    _qt5_Mqtt_check_file_exists(${imported_implib})
-    if(NOT "${IMPLIB_LOCATION}" STREQUAL "")
-        set_target_properties(Qt5::Mqtt PROPERTIES
-        "IMPORTED_IMPLIB_${Configuration}" ${imported_implib}
-        )
-    endif()
 endmacro()
 
 if (NOT TARGET Qt5::Mqtt)
 
-    set(_Qt5Mqtt_OWN_INCLUDE_DIRS "${_qt5Mqtt_install_prefix}/include/" "${_qt5Mqtt_install_prefix}/include/QtMqtt")
+    set(_Qt5Mqtt_OWN_INCLUDE_DIRS "${_qt5Mqtt_install_prefix}/include/arm-linux-gnueabihf/qt5/" "${_qt5Mqtt_install_prefix}/include/arm-linux-gnueabihf/qt5/QtMqtt")
     set(Qt5Mqtt_PRIVATE_INCLUDE_DIRS
-        "${_qt5Mqtt_install_prefix}/include/QtMqtt/5.12.8"
-        "${_qt5Mqtt_install_prefix}/include/QtMqtt/5.12.8/QtMqtt"
+        "${_qt5Mqtt_install_prefix}/include/arm-linux-gnueabihf/qt5/QtMqtt/5.12.8"
+        "${_qt5Mqtt_install_prefix}/include/arm-linux-gnueabihf/qt5/QtMqtt/5.12.8/QtMqtt"
     )
 
     foreach(_dir ${_Qt5Mqtt_OWN_INCLUDE_DIRS})
@@ -204,14 +210,8 @@ if (NOT TARGET Qt5::Mqtt)
         endif()
     endif()
 
-    _populate_Mqtt_target_properties(RELEASE "Qt5Mqtt.dll" "libQt5Mqtt.a" FALSE)
+    _populate_Mqtt_target_properties(RELEASE "libQt5Mqtt.so.5.12.8" "" FALSE)
 
-    if (EXISTS
-        "${_qt5Mqtt_install_prefix}/bin/Qt5Mqtt.dll"
-      AND EXISTS
-        "${_qt5Mqtt_install_prefix}/lib/libQt5Mqtt.a" )
-        _populate_Mqtt_target_properties(DEBUG "Qt5Mqtt.dll" "libQt5Mqtt.a" FALSE)
-    endif()
 
 
 
@@ -227,7 +227,7 @@ if (NOT TARGET Qt5::Mqtt)
           IsDebugAndRelease)
         set_property(TARGET Qt5::${Plugin} APPEND PROPERTY IMPORTED_CONFIGURATIONS ${Configuration})
 
-        set(imported_location "${_qt5Mqtt_install_prefix}/plugins/${PLUGIN_LOCATION}")
+        set(imported_location "${_qt5Mqtt_install_prefix}/lib/arm-linux-gnueabihf/qt5/plugins/${PLUGIN_LOCATION}")
         _qt5_Mqtt_check_file_exists(${imported_location})
         set_target_properties(Qt5::${Plugin} PROPERTIES
             "IMPORTED_LOCATION_${Configuration}" ${imported_location}
