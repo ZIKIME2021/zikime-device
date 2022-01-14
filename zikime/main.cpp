@@ -25,6 +25,7 @@ int main(int argc, char *argv[])
 
     engine.rootContext()->setContextProperty("DeviceManager", &deviceManager);
     engine.rootContext()->setContextProperty("API_SERVER", API_SERVER);
+    engine.rootContext()->setContextProperty("WEB_SERVER", WEB_SERVER);
     engine.rootContext()->setContextProperty("MQTT_SERVER", MQTT_SERVER);
     engine.rootContext()->setContextProperty("MQTT_PORT", MQTT_PORT);
 

@@ -57,7 +57,7 @@ QString DeviceManager::getGPSInfo()
 #ifdef Q_OS_WIN
     gpsInfo = "L80-M39";
 #else
-    serial = "";
+
 #endif
 
     return gpsInfo;
