@@ -1,4 +1,4 @@
-QT += quick network
+QT += quick network mqtt
 
 CONFIG += c++11
 
@@ -34,8 +34,21 @@ HEADERS += \
     devicemanager.h \
     qmlmqttclient.h
 
+<<<<<<< HEAD
 win32 {
     LIBS += -L$$PWD/qtmqtt/lib -llibQt5Mqtt
     INCLUDEPATH += $$PWD/qtmqtt/include
     DEPENDPATH += $$PWD/qtmqtt/include
 }
+=======
+#LIBS += -L$$PWD/mosquitto/x64/lib -lmosquitto
+#LIBS += -L$$PWD/mosquitto/x64/lib -lmosquittopp
+
+#LIBS += -L$$PWD/qtmqtt/lib -llibQt5Mqtt
+
+#INCLUDEPATH += $$PWD/mosquitto/x64/includes
+#INCLUDEPATH += $$PWD/qtmqtt/src/mqtt/include
+
+#DEPENDPATH += $$PWD/mosquitto/x64/includes
+#DEPENDPATH += $$PWD/qtmqtt/src/mqtt/include
+>>>>>>> 113a3f1d566fee9e9100c61d758d0c0c05d1892a
