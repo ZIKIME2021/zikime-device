@@ -5,7 +5,7 @@ import QtQuick.Layouts 1.15
 import QtQuick.Window 2.12
 
 import MqttClient 1.0
-//import Firmata 1.0
+import Firmata 1.0
 
 ApplicationWindow {
     id: idWindow
@@ -156,10 +156,10 @@ ApplicationWindow {
                         onClicked: pushView("Settings.qml")
                     }
                 }
-                /*
+
                 Firmata {
                     backend: SerialFirmata {
-                        device: "/dev/ttyUSB1"
+                        device: SERIAL_PORT
                     }
                     DigitalPin {
                         id: idLedPin
@@ -174,7 +174,7 @@ ApplicationWindow {
                         value: sosCheck ? 200 : 0
                     }
                 }
-                */
+
             }
         }
     }

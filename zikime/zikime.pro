@@ -22,6 +22,9 @@ CONFIG(debug, debug|release) {
 QML_IMPORT_PATH = $$PWD/qml
 QML2_IMPORT_PATH = $$PWD/qml
 
+QML_IMPORT_PATH += $$PWD/qfirmata/imports
+QML2_IMPORT_PATH += $$PWD/qfirmata/imports
+
 # Additional import path used to resolve QML modules just for Qt Quick Designer
 QML_DESIGNER_IMPORT_PATH =
 
@@ -54,6 +57,9 @@ unix {
 }
 
 DISTFILES += \
+    qfirmata/imports/Firmata/libqmlfirmataplugin.a \
+    qfirmata/imports/Firmata/qmldir \
+    qfirmata/imports/Firmata/qmlfirmataplugin.dll \
     qml/RegisterPage.qml \
     qml/Settings.qml \
     qml/VideoList.qml \

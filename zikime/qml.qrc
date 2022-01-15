@@ -6,6 +6,9 @@
         <file>qml/Settings.qml</file>
         <file>qml/VideoList.qml</file>
         <file>qml/WifiList.qml</file>
+        <file>qfirmata/imports/Firmata/libqmlfirmataplugin.a</file>
+        <file>qfirmata/imports/Firmata/qmldir</file>
+        <file>qfirmata/imports/Firmata/qmlfirmataplugin.dll</file>
     </qresource>
     <qresource prefix="/images"/>
 </RCC>
