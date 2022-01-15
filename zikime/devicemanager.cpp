@@ -27,7 +27,7 @@ QString DeviceManager::getCurrentPosition()
 #ifdef Q_OS_WIN
     return _simulationData.takeFirst();
 #else
-
+    return _simulationData.takeFirst();
 #endif
 }
 

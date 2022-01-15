@@ -31,7 +31,10 @@ int main(int argc, char *argv[])
     engine.rootContext()->setContextProperty("SERIAL_PORT", SERIAL_PORT);
 
     qmlRegisterType<QmlMqttClient>("MqttClient", 1, 0, "MqttClient");
+    
+#ifdef Q_OS_WIN
     engine.addImportPath("D:\\gitclone\\zikime-device\\zikime\\qfirmata\\imports");
+#endif
 
     QObject::connect(&engine, &QQmlApplicationEngine::objectCreated,
                      &app, [url](QObject *obj, const QUrl &objUrl) {
