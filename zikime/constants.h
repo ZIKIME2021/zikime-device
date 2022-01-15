@@ -7,8 +7,8 @@
 
 #define API_SERVER                                "http://www.zikime.com:9999"
 #define WEB_SERVER                                "http://localhost:8000"
-#define MQTT_SERVER                               "172.27.72.232"
-#define MQTT_PORT                                 1883
+#define MQTT_SERVER                               "www.zikime.com"
+#define MQTT_PORT                                 8080
 #else
 #define API_SERVER                                "http://www.zikime.com:9999"
 #endif
