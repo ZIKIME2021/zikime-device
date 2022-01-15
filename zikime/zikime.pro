@@ -19,7 +19,8 @@ CONFIG(debug, debug|release) {
 }
 
 # Additional import path used to resolve QML modules in Qt Creator's code model
-QML_IMPORT_PATH =
+QML_IMPORT_PATH = $$PWD/qml
+QML2_IMPORT_PATH = $$PWD/qml
 
 # Additional import path used to resolve QML modules just for Qt Quick Designer
 QML_DESIGNER_IMPORT_PATH =
@@ -51,3 +52,10 @@ unix {
 
     QT += mqtt
 }
+
+DISTFILES += \
+    qml/RegisterPage.qml \
+    qml/Settings.qml \
+    qml/VideoList.qml \
+    qml/WifiList.qml \
+    qml/main.qml

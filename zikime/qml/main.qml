@@ -5,7 +5,7 @@ import QtQuick.Layouts 1.15
 import QtQuick.Window 2.12
 
 import MqttClient 1.0
-import Firmata 1.0
+//import Firmata 1.0
 
 ApplicationWindow {
     id: idWindow
@@ -79,7 +79,7 @@ ApplicationWindow {
 
                     Image {
                         anchors.fill: parent
-                        source: "images/wifi.png"
+                        source: "../images/wifi.png"
                         fillMode: Image.PreserveAspectFit
                     }
                     MouseArea {
@@ -95,7 +95,7 @@ ApplicationWindow {
                     Layout.fillWidth: true
                     Image {
                         anchors.fill: parent
-                        source: "images/sos.png"
+                        source: "../images/sos.png"
                         fillMode: Image.PreserveAspectFit
                     }
                     Item {
@@ -127,7 +127,7 @@ ApplicationWindow {
                     Layout.fillWidth: true
                     Image {
                         anchors.fill: parent
-                        source: "images/regist.png"
+                        source: "../images/regist.png"
                         fillMode: Image.PreserveAspectFit
                     }
                     MouseArea {
@@ -148,7 +148,7 @@ ApplicationWindow {
                     Layout.fillWidth: true
                     Image {
                         anchors.fill: parent
-                        source: "images/settings.png"
+                        source: "../images/settings.png"
                         fillMode: Image.PreserveAspectFit
                     }
                     MouseArea {
@@ -156,6 +156,7 @@ ApplicationWindow {
                         onClicked: pushView("Settings.qml")
                     }
                 }
+                /*
                 Firmata {
                     backend: SerialFirmata {
                         device: "/dev/ttyUSB1"
@@ -173,6 +174,7 @@ ApplicationWindow {
                         value: sosCheck ? 200 : 0
                     }
                 }
+                */
             }
         }
     }

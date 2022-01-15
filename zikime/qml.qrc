@@ -1,11 +1,11 @@
 <RCC>
     <qresource prefix="/">
-        <file>main.qml</file>
-        <file>RegisterPage.qml</file>
-        <file>Settings.qml</file>
-        <file>VideoList.qml</file>
-        <file>WifiList.qml</file>
         <file>qtquickcontrols2.conf</file>
+        <file>qml/main.qml</file>
+        <file>qml/RegisterPage.qml</file>
+        <file>qml/Settings.qml</file>
+        <file>qml/VideoList.qml</file>
+        <file>qml/WifiList.qml</file>
     </qresource>
     <qresource prefix="/images"/>
 </RCC>
