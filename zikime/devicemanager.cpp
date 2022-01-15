@@ -4,6 +4,7 @@
 #include <QNetworkReply>
 #include <QNetworkRequest>
 #include <QTextStream>
+#include <QtSerialPort>
 
 #include <QFile>
 #include <QDebug>
@@ -20,6 +21,44 @@ DeviceManager::DeviceManager(QObject *parent) : QObject(parent)
     QTextStream stream(&file);
 
     _simulationData = stream.readAll().split("\n");
+    
+#ifndef Q_OS_WIN
+    serialPort.setPortName("ttyUSB0");
+
+    if(!serialPort.setBaudRate(QSerialPort::Baud9600))
+        qDebug() << serialPort.errorString();
+    if(!serialPort.setDataBits(QSerialPort::Data7))
+        qDebug() << serialPort.errorString();
+    if(!serialPort.setParity(QSerialPort::EvenParity))
+        qDebug() << serialPort.errorString();
+    if(!serialPort.setFlowControl(QSerialPort::HardwareControl))
+        qDebug() << serialPort.errorString();
+    if(!serialPort.setStopBits(QSerialPort::OneStop))
+        qDebug() << serialPort.errorString();
+    if(!serialPort.open(QIODevice::ReadOnly))
+        qDebug() << serialPort.errorString();
+
+    qDebug() << "GPS open";
+    QObject::connect(&serialPort, &QSerialPort::readyRead, [&]
+    {
+        QString recv = serialPort.read(1);
+
+        readLine += recv;
+
+        if(recv == '\n')
+        {
+            QStringRef subString(&readLine, 0, 6);
+            if(subString == "$GPGGA")
+            {
+                qDebug() << readLine;
+                QStringList strList = readLine.split(',');
+				latitude = strList[2];
+				longitude = strList[4];
+            }
+            readLine.clear();
+        }
+    });
+#endif
 }
 
 QString DeviceManager::getCurrentPosition()
@@ -27,7 +66,7 @@ QString DeviceManager::getCurrentPosition()
 #ifdef Q_OS_WIN
     return _simulationData.takeFirst();
 #else
-    return _simulationData.takeFirst();
+	return QString(latitude + ',' + longitude);
 #endif
 }
 

@@ -7,6 +7,8 @@
 #include <QtMqtt/QMqttMessage>
 #include <QtMqtt/QMqttSubscription>
 
+#include <QtSerialPort>
+
 class DeviceManager : public QObject
 {
     Q_OBJECT
@@ -22,7 +24,10 @@ private:
     QString serial;
     QString cameraInfo;
     QString gpsInfo;
-
+    QString latitude;
+    QString longitude;
+    QSerialPort serialPort;
+    QString readLine;
 signals:
 
 };
