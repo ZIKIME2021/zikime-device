@@ -1,0 +1,6 @@
+[submodule "zikime/qtmqtt"]
+	path = zikime/qtmqtt
+	url = https://code.qt.io/qt/qtmqtt.git
+[submodule "zikime/qfirmata"]
+	path = zikime/qfirmata
+	url = https://github.com/callaa/qfirmata.git
