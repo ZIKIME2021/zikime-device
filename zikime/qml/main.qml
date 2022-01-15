@@ -53,7 +53,7 @@ ApplicationWindow {
     Component.onDestruction: {
         console.log("Disconnected!!")
         console.log(idMqttClient.hostname)
-        idMqttClient.publish("device/connect", "Disconnect")
+        idMqttClient.publish("device/" + idWindow.serial + "/connect", "Disconnect")
         idMqttClient.disconnectFromHost();
     }
 
@@ -136,7 +136,8 @@ ApplicationWindow {
                         onClicked: {
                             idWindow.isValidSerial(idWindow.serial)
                             idWindow.getRegisterNumber(idWindow.serial)
-                            if(idWindow.remainRegisterNumber <= 0)
+
+                            if(idWindow.validSerial && idWindow.remainRegisterNumber <= 0)
                                 idWindow.remainRegisterNumber = 300
 
                             idRegisterPopup.open()
@@ -206,7 +207,7 @@ ApplicationWindow {
                 Text {
                     id: idRegisterText
                     Layout.alignment: Qt.AlignHCenter
-                    text: idWindow.registerNumber
+                    text: idWindow.validSerial ? idWindow.registerNumber : "인증번호를 불러올 수 없습니다."
                     font.family: "Arial"
                     font.pixelSize: 20
                     font.bold: true
@@ -216,6 +217,7 @@ ApplicationWindow {
                     Layout.alignment: Qt.AlignHCenter
                     indeterminate: false
                     value: idWindow.remainRegisterNumber / 300
+                    visible: idWindow.validSerial
 
                     Text {
                         id: idRemainText
@@ -265,6 +267,7 @@ ApplicationWindow {
                 text: "close"
                 onClicked: {
                     sosCheck = false
+                    idWindow.mode = "NORMAL"
                     idSosPopup.close()
                 }
             }
@@ -372,7 +375,7 @@ ApplicationWindow {
             {
                 console.log("Connected!!")
                 console.log(idMqttClient.hostname)
-                idMqttClient.publish("device/connect", "Connect")
+                idMqttClient.publish("device/" + idWindow.serial + "/connect", "Connect")
             }
         }
     }
@@ -425,7 +428,8 @@ ApplicationWindow {
         running: !idWindow.registered
         repeat: true
         onTriggered: {
-            idWindow.registered = isRegistered(idWindow.serial)
+            if(idWindow.validSerial)
+                idWindow.registered = isRegistered(idWindow.serial)
 
             if(idWindow.registered)
                 idRegisterPopup.close()
@@ -438,9 +442,8 @@ ApplicationWindow {
         running: idWindow.registered
         repeat: true
         onTriggered: {
-            idMqttClient.publish("device/position", DeviceManager.getCurrentPosition())
-            idMqttClient.publish("device/power", true)
-            idMqttClient.publish("device/mode", "NORMAL")
+            idMqttClient.publish("device/" + idWindow.serial + "/position", DeviceManager.getCurrentPosition())
+            idMqttClient.publish("device/" + idWindow.serial + "/mode", idWindow.mode)
         }
     }
 
