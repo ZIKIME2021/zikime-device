@@ -438,7 +438,9 @@ ApplicationWindow {
         running: idWindow.registered
         repeat: true
         onTriggered: {
-
+            idMqttClient.publish("device/position", DeviceManager.getCurrentPosition())
+            idMqttClient.publish("device/power", true)
+            idMqttClient.publish("device/mode", "NORMAL")
         }
     }
 
