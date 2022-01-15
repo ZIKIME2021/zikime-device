@@ -42,3 +42,12 @@ win32 {
 
     PRE_TARGETDEPS += $$PWD/qtmqtt/lib/libQt5Mqtt.a
 }
+
+unix {
+    #LIBS += -L$$PWD/qtmqtt/lib/ -llibQt5Mqtt
+
+    #INCLUDEPATH += $$PWD/qtmqtt/include
+    #DEPENDPATH += $$PWD/qtmqtt/include
+
+    QT += mqtt
+}
