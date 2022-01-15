@@ -5,6 +5,7 @@ import QtQuick.Layouts 1.15
 import QtQuick.Window 2.12
 
 import MqttClient 1.0
+import Firmata 1.0
 
 ApplicationWindow {
     id: idWindow
@@ -37,6 +38,8 @@ ApplicationWindow {
 
     property int registerNumber: 0
     property var emailList: []
+
+    property bool sosCheck: false
 
     Component.onCompleted: {
         serial = DeviceManager.getSerial()
@@ -111,6 +114,7 @@ ApplicationWindow {
                         onClicked: {
                             idWindow.mode = "EMERGENCY"
                             idSosPopup.open()
+                            sosCheck = true
                             //DeviceManager.sendSOS()
                         }
                     }
@@ -150,6 +154,23 @@ ApplicationWindow {
                     MouseArea {
                         anchors.fill: parent
                         onClicked: pushView("Settings.qml")
+                    }
+                }
+                Firmata {
+                    backend: SerialFirmata {
+                        device: "/dev/ttyUSB1"
+                    }
+                    DigitalPin {
+                        id: idLedPin
+                        output: true
+                        pin: 8
+                        value: sosCheck ? 1 : 0
+                    }
+                    DigitalPin {
+                        id: idVibratorPin
+                        output: true
+                        pin: 9
+                        value: sosCheck ? 200 : 0
                     }
                 }
             }
@@ -224,6 +245,7 @@ ApplicationWindow {
                 anchors.bottom: parent.bottom
                 text: "close"
                 onClicked: {
+                    sosCheck = false
                     idSosPopup.close()
                 }
             }
