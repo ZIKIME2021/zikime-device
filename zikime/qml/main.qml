@@ -37,6 +37,7 @@ ApplicationWindow {
     property double currentLongitude: 0.0
 
     property int registerNumber: 0
+    property double remainRegisterNumber: 0
     property var emailList: []
 
     property bool sosCheck: false
@@ -135,7 +136,9 @@ ApplicationWindow {
                         onClicked: {
                             idWindow.isValidSerial(idWindow.serial)
                             idWindow.getRegisterNumber(idWindow.serial)
-                            //idMqttClient.publish("device/register", "")
+                            if(idWindow.remainRegisterNumber <= 0)
+                                idWindow.remainRegisterNumber = 300
+
                             idRegisterPopup.open()
                         }
                     }
@@ -207,6 +210,20 @@ ApplicationWindow {
                     font.family: "Arial"
                     font.pixelSize: 20
                     font.bold: true
+                }
+                ProgressBar {
+                    id: idRemainingRegisterBar
+                    Layout.alignment: Qt.AlignHCenter
+                    indeterminate: false
+                    value: idWindow.remainRegisterNumber / 300
+
+                    Text {
+                        id: idRemainText
+                        anchors.bottom: parent.top
+                        anchors.horizontalCenter: parent.horizontalCenter
+                        anchors.bottomMargin: 15
+                        text: idWindow.remainRegisterNumber.toFixed(0) + "sec remaining"
+                    }
                 }
             }
             Button {
@@ -402,6 +419,18 @@ ApplicationWindow {
             }
         }
     }
+    Timer {
+        id: idRequestRegisteredTimer
+        interval: 1000
+        running: !idWindow.registered
+        repeat: true
+        onTriggered: {
+            idWindow.registered = isRegistered(idWindow.serial)
+
+            if(idWindow.registered)
+                idRegisterPopup.close()
+        }
+    }
 
     Timer {
         id: idSendState
@@ -410,6 +439,16 @@ ApplicationWindow {
         repeat: true
         onTriggered: {
 
+        }
+    }
+
+    Timer {
+        id: idRemainingRegisterTimer
+        interval: 100
+        running: idWindow.remainRegisterNumber > 0
+        repeat: true
+        onTriggered: {
+            idWindow.remainRegisterNumber -= 0.1
         }
     }
 }
